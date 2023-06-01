@@ -7,7 +7,7 @@ const StyledDiv = styled("div")(({ theme }) => ({
   color: theme.palette.text.primary,
   padding: theme.spacing(2),
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   minHeight: "18vh",
@@ -16,7 +16,7 @@ const StyledDiv = styled("div")(({ theme }) => ({
 function Home() {
   return (
     <StyledDiv>
-      <Typography variant="h4">Bienvenido a mi pagina</Typography><br></br>
+      <Typography variant="h4">Bienvenido a mi pagina</Typography>
       <Typography><h4>Soy un programador junior aprendiendo React.js</h4></Typography>
     </StyledDiv>
   );
