@@ -16,8 +16,8 @@ const StyledDiv = styled("div")(({ theme }) => ({
 function Home() {
   return (
     <StyledDiv>
-      <Typography variant="h4">Bienvenido a mi pagina</Typography>
-      <Typography><h6>Soy un programador junior aprendiendo React.js</h6></Typography>
+      <Typography variant="h4">Bienvenido a mi pagina</Typography><br></br>
+      <Typography><h4>Soy un programador junior aprendiendo React.js</h4></Typography>
     </StyledDiv>
   );
 }
