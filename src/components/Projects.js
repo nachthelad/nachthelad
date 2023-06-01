@@ -11,7 +11,7 @@ import { styled } from "@mui/system";
 const StyledDiv = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
-  padding: theme.spacing(2),
+  paddingTop: theme.spacing(7),
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -20,10 +20,19 @@ const StyledDiv = styled("div")(({ theme }) => ({
 }));
 
 const StyledCard = styled(Card)({
-  width: 380,
+  width: 280,
   maxWidth: 380,
   margin: "1em",
 });
+
+const CardsContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  marginTop: theme.spacing(2),
+}));
+
 
 function Projects() {
   const projects = [
@@ -49,28 +58,39 @@ function Projects() {
   return (
     <StyledDiv>
       <Typography variant="h4" align="center">
-        Projects
+        My stuff
       </Typography>
-      {projects.map((project, index) => (
-        <StyledCard key={index}>
-          <CardContent>
-            <Typography variant="h5" component="div" paddingBottom={1}>
-              {project.name}
-            </Typography>
-            <Typography variant="body2">{project.description}</Typography>
-          </CardContent>
-          <CardActions>
-            <Button
-              size="small"
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Click here
-            </Button>
-          </CardActions>
-        </StyledCard>
-      ))}
+      <CardsContainer>
+        {projects.map((project, index) => (
+          <StyledCard key={index}>
+            <CardContent>
+              <Typography variant="h5" component="div" paddingBottom={1}>
+                {project.name}
+              </Typography>
+              <Typography variant="body2">{project.description}</Typography>
+            </CardContent>
+            <CardActions sx={{ justifyContent: "space-between" }}>
+              <Button
+                size="small"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Go
+              </Button>
+              <Button
+                size="small"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="primary"
+              >
+                GitHub
+              </Button>
+            </CardActions>
+          </StyledCard>
+        ))}
+      </CardsContainer>
     </StyledDiv>
   );
 }

@@ -1,23 +1,24 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const StyledDiv = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
-  padding: theme.spacing(2),
+  padding: theme.spacing(7),
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  minHeight: "18vh",
+  justifyContent: "flex-center",
+  minHeight: "10vh",
 }));
 
 function Home() {
   return (
     <StyledDiv>
-      <Typography variant="h4">Bienvenido a mi pagina</Typography>
-      <Typography><h4>Soy una especie de programador junior aprendiendo HTML, CSS, js y React.js</h4></Typography>
+      <Typography variant="h4" paddingBottom={1}>Welcome to nachthelad's page</Typography>
+      <Typography variant="subtitle1">I am a learning to code with AI and <Link href="www.coderhouse.com" className="coderLink">CoderHouse</Link></Typography>
     </StyledDiv>
   );
 }

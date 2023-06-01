@@ -44,30 +44,15 @@ function App() {
     padding: theme.spacing(2),
   }));
 
-  const StyledDiv = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.default,
-    color: theme.palette.text.primary,
-    padding: theme.spacing(2),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '18vh',
-  }));
-
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
 
-  const CloseIconContainer = styled("div")({
-    position: "absolute",
-    top: 0,
-    left: 0,
-    padding: 10,
-  });
-
   const MenuContainer = styled("div")({
-    paddingTop: 50,
+    display: 'flex',
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 5,
   });
 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -133,20 +118,15 @@ function App() {
             )}
           </StyledNav>
           <Drawer
-            anchor="left"
+            anchor="top"
             variant={isMobile ? "temporary" : "persistent"}
             open={!isMobile || menuOpen}
             onClose={toggleMenu}
           >
-            {isMobile && (
-              <CloseIconContainer>
-                <IconButton onClick={toggleMenu}>
-                  <CloseIcon />
-                </IconButton>
-              </CloseIconContainer>
-            )}
             <MenuContainer>
-            <Typography variant="h5" padding={2}>nachthelad</Typography>
+              <Typography variant="h6" padding={'1vh'}>
+                nachthelad
+              </Typography>
               <ListItem>
                 <FormControlLabel
                   control={
@@ -158,8 +138,13 @@ function App() {
                   }
                 />
               </ListItem>
-              <List>
-                <ListItem component={Link} to="/" className="link">
+              <List style={{display: 'flex', flexDirection: 'row'}}> 
+                <ListItem
+                  onClick={toggleMenu}
+                  component={Link}
+                  to="/"
+                  className="link"
+                >
                   <ListItemIcon>
                     <HomeIcon />
                   </ListItemIcon>
@@ -170,7 +155,12 @@ function App() {
                     }}
                   />
                 </ListItem>
-                <ListItem component={Link} to="/projects" className="link">
+                <ListItem
+                  onClick={toggleMenu}
+                  component={Link}
+                  to="/projects"
+                  className="link"
+                >
                   <ListItemIcon>
                     <FolderIcon />
                   </ListItemIcon>

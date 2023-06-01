@@ -1,3 +1,4 @@
+/* Anda a cambiar styles a index.css */
 .App {
   text-align: center;
 }
@@ -12,7 +13,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* Anda a cambiar styles a index.css */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,5 +37,6 @@
     transform: rotate(360deg);
   }
 }
+/* Anda a cambiar styles a index.css */
 
 
