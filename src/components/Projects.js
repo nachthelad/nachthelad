@@ -41,6 +41,7 @@ function Projects() {
       description:
         "This was my first app, it let's you send a Whatsapp message without adding the number to your contacts.",
       link: "https://whatsappnow.web.app/",
+      linkGH: "#",
     },
     {
       name: "Equipapp",

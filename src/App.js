@@ -22,6 +22,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import FolderIcon from "@mui/icons-material/Folder";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 export const ThemeContext = createContext();
 
@@ -38,6 +39,10 @@ function App() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
+    marginRight: theme.spacing(-3),
+  }));
 
   const StyledNav = styled("nav")(({ theme }) => ({
     backgroundColor: theme.palette.background.default,
@@ -145,9 +150,9 @@ function App() {
                   to="/"
                   className="link"
                 >
-                  <ListItemIcon>
+                  <StyledListItemIcon>
                     <HomeIcon />
-                  </ListItemIcon>
+                  </StyledListItemIcon>
                   <ListItemText
                     primary="Home"
                     primaryTypographyProps={{
@@ -161,9 +166,9 @@ function App() {
                   to="/projects"
                   className="link"
                 >
-                  <ListItemIcon>
+                  <StyledListItemIcon>
                     <FolderIcon />
-                  </ListItemIcon>
+                  </StyledListItemIcon>
                   <ListItemText
                     primary="Projects"
                     primaryTypographyProps={{
