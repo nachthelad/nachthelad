@@ -17,7 +17,7 @@ function Home() {
   return (
     <StyledDiv>
       <Typography variant="h4">Bienvenido a mi pagina</Typography>
-      <Typography><p>Soy un programador junior aprendiendo React.js</p></Typography>
+      <Typography><h6>Soy un programador junior aprendiendo React.js</h6></Typography>
     </StyledDiv>
   );
 }
