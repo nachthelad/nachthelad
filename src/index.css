@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.link.active {
+  background-color: #EEE;
+  color: #333;
+}

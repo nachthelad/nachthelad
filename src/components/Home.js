@@ -1,25 +1,23 @@
-import React from 'react';
-import { Typography } from '@mui/material';
-import { styled } from '@mui/system';
+import React from "react";
+import { Typography } from "@mui/material";
+import { styled } from "@mui/system";
 
-const StyledDiv = styled('div')(({ theme }) => ({
+const StyledDiv = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
   padding: theme.spacing(2),
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  minHeight: '10vh',
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: "18vh",
 }));
 
 function Home() {
   return (
     <StyledDiv>
-      <Typography variant="h4">Equipapp</Typography>
-      <Typography>
-        
-      </Typography>
+      <Typography variant="h4">Bienvenido a mi pagina</Typography>
+      <Typography>Soy un programador junior aprendiendo React.js</Typography>
     </StyledDiv>
   );
 }

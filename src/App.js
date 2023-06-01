@@ -9,17 +9,19 @@ import {
   IconButton,
   Drawer,
   List,
+  ListItemIcon,
   ListItem,
   ListItemText,
   useMediaQuery,
+  Typography,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import HomeIcon from "@mui/icons-material/Home";
+import FolderIcon from "@mui/icons-material/Folder";
 import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Formulario from "./components/Formulario";
+import Projects from "./components/Projects";
 
 export const ThemeContext = createContext();
 
@@ -41,6 +43,34 @@ function App() {
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(2),
   }));
+
+  const StyledDiv = styled('div')(({ theme }) => ({
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.text.primary,
+    padding: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '18vh',
+  }));
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const CloseIconContainer = styled("div")({
+    position: "absolute",
+    top: 0,
+    left: 0,
+    padding: 10,
+  });
+
+  const MenuContainer = styled("div")({
+    paddingTop: 50,
+  });
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -90,23 +120,6 @@ function App() {
     },
   }));
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
-  const CloseIconContainer = styled("div")({
-    position: "absolute",
-    top: 0,
-    left: 0,
-    padding: 8,
-  });
-
-  const MenuContainer = styled("div")({
-    paddingTop: 50,
-  });
-
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -119,7 +132,6 @@ function App() {
               </IconButton>
             )}
           </StyledNav>
-
           <Drawer
             anchor="left"
             variant={isMobile ? "temporary" : "persistent"}
@@ -134,6 +146,7 @@ function App() {
               </CloseIconContainer>
             )}
             <MenuContainer>
+            <Typography variant="h5" padding={2}>nachthelad</Typography>
               <ListItem>
                 <FormControlLabel
                   control={
@@ -146,42 +159,34 @@ function App() {
                 />
               </ListItem>
               <List>
-                <ListItem button component={Link} to="/" onClick={toggleMenu}>
-                  <ListItemText primary="Inicio" />
+                <ListItem component={Link} to="/" className="link">
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Home"
+                    primaryTypographyProps={{
+                      color: "textPrimary",
+                    }}
+                  />
                 </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/about"
-                  onClick={toggleMenu}
-                >
-                  <ListItemText primary="Acerca de" />
-                </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/contact"
-                  onClick={toggleMenu}
-                >
-                  <ListItemText primary="Contacto" />
-                </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/formulario"
-                  onClick={toggleMenu}
-                >
-                  <ListItemText primary="Formulario" />
+                <ListItem component={Link} to="/projects" className="link">
+                  <ListItemIcon>
+                    <FolderIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Projects"
+                    primaryTypographyProps={{
+                      color: "textPrimary",
+                    }}
+                  />
                 </ListItem>
               </List>
             </MenuContainer>
           </Drawer>
-
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/formulario" element={<Formulario />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </Router>
       </ThemeContext.Provider>
