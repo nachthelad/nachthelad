@@ -17,12 +17,10 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 import FolderIcon from "@mui/icons-material/Folder";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 export const ThemeContext = createContext();
 
@@ -54,10 +52,10 @@ function App() {
   };
 
   const MenuContainer = styled("div")({
-    display: 'flex',
-    flexDirection: "row",
+    display: 'inline-block',
+    flexDirection: "column",
     alignItems: "center",
-    paddingTop: 5,
+    paddingTop: 3,
   });
 
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -123,7 +121,7 @@ function App() {
             )}
           </StyledNav>
           <Drawer
-            anchor="top"
+            anchor="left"
             variant={isMobile ? "temporary" : "persistent"}
             open={!isMobile || menuOpen}
             onClose={toggleMenu}
@@ -143,7 +141,7 @@ function App() {
                   }
                 />
               </ListItem>
-              <List style={{display: 'flex', flexDirection: 'row'}}> 
+              <List> 
                 <ListItem
                   onClick={toggleMenu}
                   component={Link}
