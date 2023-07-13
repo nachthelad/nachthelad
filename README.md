@@ -1,24 +1,13 @@
-<div align="center">
-<img src="" align="center" style="width: 100%" />
-</div>  
-  
-
 ### I'm Nacho (yes like nacho cheese) I am growing as a FrontEnd Developer. You can see some of my projects that I have done with AI and those with CoderHouse where now I am getting a certificate as a FrontEnd Dev in HTML, CSS, JS and ReactJS.   
-  
 
 - 💻 I’m currently finishing the first part of the career, which includes HTML, CSS, SASS, Boostrap and SEO.  
   
-
 - 🌱I'm using YouTube and ChatGPT to learn JavaScript and ReactJS.  
   
-
 <br/>  
-
 
 ## My Skill Set  
 <table><tr><td valign="top" width="33%">
-
-
 
 ### Frontend  
 <div align="center">  
@@ -32,8 +21,6 @@
 
 </td><td valign="top" width="33%">
 
-
-
 ### Design  
 <div align="center">  
 <a href="https://www.figma.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/figma-icon.svg" alt="Figma" height="50" /></a>  
@@ -45,7 +32,6 @@
 </td></tr></table>  
 
 <br/>  
-
 
 ## Connect with me  
 <div align="center">
@@ -63,22 +49,16 @@
 </a>  
 </div>  
   
-
 <br/>  
-
 
 ## Github Stats  
 <div align="center"><img src="https://github-readme-stats.vercel.app/api?username=nachthelad&show_icons=true&count_private=true&hide_border=true" align="center" /></div>  
 
 <br/>  
 
-
 ## Others  
   
-
 <br/>  
-
-  
 
 <br/>  
 
@@ -86,7 +66,6 @@
 <img src="https://komarev.com/ghpvc/?username=nachthelad&&style=flat-square" align="center" />
 </div>  
   
-
 <br/>  
 
 <div align="center">
