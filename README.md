@@ -1,4 +1,4 @@
-### I'm Nacho (yes like nacho cheese) I am growing as a FrontEnd Developer. You can see some of my projects that I have done with AI and those with CoderHouse where now I am getting a certificate as a FrontEnd Dev in HTML, CSS, JS and ReactJS.   
+### I'm Nacho (yes like nacho cheese) I am growing as a FrontEnd Developer. You can see some of my projects that I have been working on with AI and some with CoderHouse where now I am getting a certificate as a FrontEnd Dev in HTML, CSS, JS and ReactJS.   
 
 - 💻 I’m currently finishing the first part of the career, which includes HTML, CSS, SASS, Boostrap and SEO.  
   
