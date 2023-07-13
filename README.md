@@ -42,14 +42,6 @@
 <a href="https://www.adobe.com/in/products/indesign.html" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/adobeindesign.svg" alt="Adobe InDesign" height="50" /></a>  
 </div>
 
-</td><td valign="top" width="33%">
-
-
-
-### These are my cats  
-<img src="https://lh3.google.com/pw/AIL4fc_CPHsNMt3RCkCMRnIBDXWSjGhZ4ZACzznKrTBvBei1E_cvx5yKipZH6-J1Su37tU5q6fE2CUWs2bHkiQw72AbENEYP7PA=w888-h919-s-no?authuser=0" align="left" height="250" width="225" />  
-
-
 </td></tr></table>  
 
 <br/>  
