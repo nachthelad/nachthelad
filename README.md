@@ -9,7 +9,7 @@
 - 💻 I’m currently finishing the first part of the carreer, which includes HTML, CSS, SASS, Boostrap and SEO.  
   
 
-- 🌱I'm using youtube and ChatGPT to learn JavaScript and ReactJS.  
+- 🌱I'm using YouTube and ChatGPT to learn JavaScript and ReactJS.  
   
 
 <br/>  
@@ -73,7 +73,7 @@
 <br/>  
 
 
-## Recent Blog Posts  
+## Others  
   
 
 <br/>  
