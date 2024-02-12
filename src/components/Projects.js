@@ -51,21 +51,21 @@ function Projects() {
     {
       name: "nachthelad.com.ar",
       description: "This is my personal page where I showcase my work",
-      link: "nachthelad.com.ar",
+      link: "https://nachthelad.com.ar",
       linkGH: "https://github.com/nachthelad/nachthelad",
     },
     {
       name: "verdurita.com.ar",
       description:
         "This is a project that let's you see the price of the different currencies in Argentina",
-      link: "verdurita.com.ar",
+      link: "https://verdurita.com.ar",
       linkGH: "https://github.com/nachthelad/verdurita",
     },
     {
       name: "dwine.com.ar",
       description:
         "This is a WIP for a website that let's you test and give feedback about different wines in Argentina",
-      link: "dwine.com.ar",
+      link: "https://dwine.com.ar",
       linkGH: "#",
     },
     // Puedes agregar más proyectos aquí
