@@ -33,7 +33,6 @@ const CardsContainer = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(2),
 }));
 
-
 function Projects() {
   const projects = [
     {
@@ -41,17 +40,33 @@ function Projects() {
       description:
         "This was my first app, it let's you send a Whatsapp message without adding the number to your contacts.",
       link: "https://whatsappnow.web.app/",
-      linkGH: "#",
+      linkGH: "https://github.com/nachthelad/whatsappnow",
     },
     {
       name: "Equipapp",
       description: "This app let's you create two groups for a football match.",
       link: "https://equipapp.web.app/",
+      linkGH: "https://github.com/nachthelad/equipapp",
     },
     {
       name: "nachthelad.com.ar",
-      description: "This is the last project I am working on",
-      link: "#",
+      description: "This is my personal page where I showcase my work",
+      link: "nachthelad.com.ar",
+      linkGH: "https://github.com/nachthelad/nachthelad",
+    },
+    {
+      name: "verdurita.com.ar",
+      description:
+        "This is a project that let's you see the price of the different currencies in Argentina",
+      link: "verdurita.com.ar",
+      linkGH: "https://github.com/nachthelad/verdurita",
+    },
+    {
+      name: "dwine.com.ar",
+      description:
+        "This is a WIP for a website that let's you test and give feedback about different wines in Argentina",
+      link: "dwine.com.ar",
+      linkGH: "#",
     },
     // Puedes agregar más proyectos aquí
   ];
@@ -75,17 +90,15 @@ function Projects() {
                 size="small"
                 href={project.link}
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 Go
               </Button>
               <Button
                 size="small"
-                href={project.link}
+                href={project.linkGH}
                 target="_blank"
                 rel="noopener noreferrer"
-                color="primary"
-              >
+                color="primary">
                 GitHub
               </Button>
             </CardActions>

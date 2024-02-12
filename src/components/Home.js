@@ -18,7 +18,7 @@ function Home() {
   return (
     <StyledDiv>
       <Typography variant="h4" paddingBottom={1}>Welcome to nachthelad's page</Typography>
-      <Typography variant="subtitle1">I am a learning to code with AI and <Link href="www.coderhouse.com" className="coderLink">CoderHouse</Link></Typography>
+      <Typography variant="subtitle1">I am a learning to code with AI, also finished a course for Frontend Development with React in <Link href="www.coderhouse.com" className="coderLink">CoderHouse</Link></Typography>
     </StyledDiv>
   );
 }
