@@ -1,4 +1,4 @@
-### I'm Nacho (yes like nacho cheese) I am junior FrontEnd Developer. You can see some of my projects that I have been working on. I work mostly with NextJS, React, MUI, JS and TS.
+### I'm Nacho (yes like nacho cheese) I am junior Frontend Developer. You can see the projects I have been working on. I mostly used NextJS, React, MUI, JS and TS.
   
 <br/>  
 
