@@ -1,17 +1,33 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const projects = [
   {
     name: "ConversorTotal",
-    url: "https://conversortotal.vercel.app",
-    description: "Complete conversion tool for various units and currencies with real-time rates",
+    url: "https://conversortotal.online",
+    description:
+      "Complete conversion tool for various units and currencies with real-time rates",
     tech: ["React", "Next.js", "API Integration", "TypeScript"],
   },
   {
-    name: "DimSure",
-    url: "https://dimsure.vercel.app",
-    description: "Dimension measurement and calculation tool for precise measurements",
+    name: "Dimsure",
+    url: "https://dimsure.online",
+    description:
+      "Dimension measurement and calculation tool for precise measurements",
     tech: ["React", "Next.js", "TypeScript", "Calculations"],
+  },
+  {
+    name: "Verdurita",
+    url: "https://verdurita.com.ar",
+    description:
+      "Track currency exchange rates in Argentina with historical data",
+    tech: ["React", "API Integration", "Charts", "Real-time Data"],
+  },
+  {
+    name: "Equipapp",
+    url: "https://equipapp.web.app",
+    description:
+      "Create balanced teams for football matches using smart algorithms",
+    tech: ["React", "Firebase", "Material-UI", "Algorithms"],
   },
   {
     name: "WhatsappNow",
@@ -19,19 +35,7 @@ const projects = [
     description: "Send WhatsApp messages without adding contacts to your phone",
     tech: ["React", "Firebase", "PWA", "Material-UI"],
   },
-  {
-    name: "Equipapp",
-    url: "https://equipapp.web.app",
-    description: "Create balanced teams for football matches using smart algorithms",
-    tech: ["React", "Firebase", "Material-UI", "Algorithms"],
-  },
-  {
-    name: "Verdurita",
-    url: "https://verdurita.com.ar",
-    description: "Track currency exchange rates in Argentina with historical data",
-    tech: ["React", "API Integration", "Charts", "Real-time Data"],
-  },
-]
+];
 
 export function Projects() {
   return (
@@ -49,10 +53,15 @@ export function Projects() {
             >
               {project.name}
             </Link>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">{project.description}</p>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {project.description}
+            </p>
             <div className="flex flex-wrap justify-center gap-2">
               {project.tech.map((tech, techIndex) => (
-                <span key={techIndex} className="px-3 py-1 text-xs bg-muted text-muted-foreground rounded-full">
+                <span
+                  key={techIndex}
+                  className="px-3 py-1 text-xs bg-muted text-muted-foreground rounded-full"
+                >
                   {tech}
                 </span>
               ))}
@@ -61,5 +70,5 @@ export function Projects() {
         ))}
       </div>
     </section>
-  )
+  );
 }
