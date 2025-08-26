@@ -8,7 +8,7 @@ const CONTACT_INFO = {
 export function Contact() {
   return (
     <section>
-      <h2 className="text-2xl font-medium text-foreground mb-12">Get In Touch</h2>
+      <h2 className="text-2xl font-medium text-foreground mb-12">Contacto</h2>
 
       <div className="space-y-6">
         <div>
@@ -26,6 +26,7 @@ export function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Ver perfil de GitHub de Ignacio Ventura"
           >
             GitHub
           </a>
@@ -34,6 +35,7 @@ export function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Ver perfil de LinkedIn de Ignacio Ventura"
           >
             LinkedIn
           </a>

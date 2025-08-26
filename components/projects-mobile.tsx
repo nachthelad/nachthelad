@@ -52,6 +52,7 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Ver demo del proyecto ${project.name}`}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Ver demo
@@ -63,6 +64,7 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Ver código fuente del proyecto ${project.name}`}
                     >
                       <Github className="mr-2 h-4 w-4" />
                       Código

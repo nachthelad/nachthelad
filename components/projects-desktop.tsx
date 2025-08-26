@@ -30,22 +30,24 @@ export function ProjectsDesktop({
                     {project.name}
                   </h3>
                   <div className="flex gap-2 shrink-0">
-                    <Button asChild size="sm">
+                    <Button asChild size="default">
                       <Link
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Ver demo del proyecto ${project.name}`}
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Ver demo
                       </Link>
                     </Button>
                     {project.github && (
-                      <Button asChild size="sm" variant="outline">
+                      <Button asChild size="default" variant="outline">
                         <Link
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Ver código fuente del proyecto ${project.name}`}
                         >
                           <Github className="mr-2 h-4 w-4" />
                           Código
