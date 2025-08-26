@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { WebVitals } from "@/components/web-vitals";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -132,6 +133,7 @@ export default function RootLayout({
             Saltar al contenido principal
           </a>
           <div className="min-h-screen bg-background text-foreground">
+            <WebVitals />
             {children}
           </div>
         </ErrorBoundary>
