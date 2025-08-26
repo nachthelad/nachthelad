@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://nachthelad.com.ar",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32", type: "image/x-icon" },
+    ],
+    apple: [
+      { url: "/logo192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
   keywords: [
     "Frontend Developer",
     "React",
@@ -117,6 +125,12 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ErrorBoundary>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:no-underline"
+          >
+            Saltar al contenido principal
+          </a>
           <div className="min-h-screen bg-background text-foreground">
             {children}
           </div>

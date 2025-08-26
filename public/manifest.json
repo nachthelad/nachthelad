@@ -1,25 +1,30 @@
 {
-  "short_name": "Nachthelad Portfolio",
-  "name": "Nachthelad - Portfolio & Projects",
+  "short_name": "Ignacio Ventura",
+  "name": "Ignacio Ventura - Frontend Developer",
+  "description": "Frontend Developer especializado en React, Next.js y tecnologías web modernas",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "/logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
-      "src": "logo512.png",
+      "src": "/logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#0a0a0a",
+  "lang": "es",
+  "orientation": "portrait-primary"
 }
