@@ -21,9 +21,9 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
       )}
 
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <Card
-            key={index}
+            key={project.name}
             className="group h-full flex flex-col hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
           >
             <CardHeader>
