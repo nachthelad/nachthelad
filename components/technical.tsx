@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 
 export function Technical() {
   const skills = [
@@ -18,11 +18,11 @@ export function Technical() {
     "Responsive Design",
     "PWA",
     "MongoDB",
-  ]
+  ];
 
   return (
     <section className="mb-20">
-      <h2 className="text-2xl font-medium text-foreground mb-12">Technical Skills</h2>
+      <h2 className="text-2xl font-medium text-foreground mb-12">Skills</h2>
 
       <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
         {skills.map((skill, index) => (
@@ -36,5 +36,5 @@ export function Technical() {
         ))}
       </div>
     </section>
-  )
+  );
 }
