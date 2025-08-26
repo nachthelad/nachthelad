@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Frontend Developer especializado en React, Next.js, TypeScript y tecnologías web modernas. Creando experiencias web únicas con código limpio y diseño responsive.",
   generator: "Next.js",
   metadataBase: new URL("https://nachthelad.com.ar"),
+  verification: {
+    google: "p0A5gsNea8EXWAk0pXeMMRz2Wm195rtYLme0hQY-tbQ",
+  },
   alternates: {
     canonical: "https://nachthelad.com.ar",
   },
