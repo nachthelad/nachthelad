@@ -1,9 +1,4 @@
-// Contact information - easy to modify
-const CONTACT_INFO = {
-  email: "nachthelad.dev@gmail.com",
-  github: "https://github.com/nachthelad",
-  linkedin: "https://www.linkedin.com/in/ignacio-ventura/",
-}
+import { CONTACT_INFO } from "@/lib/constants"
 
 export function Contact() {
   return (
