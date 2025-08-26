@@ -30,10 +30,11 @@
 - [x] Improve meta descriptions with targeted keywords
 - [x] Add canonical URL tags
 
-### 5. **Create Sitemap**
-- [ ] Generate `sitemap.xml` in `/public`
-- [ ] Include all main pages (removed redundant projects page - projects are on homepage)
-- [ ] Submit sitemap to Google Search Console
+### 5. **Create Sitemap** ✅ **COMPLETED**
+- [x] Generate `sitemap.xml` in `/public`
+- [x] Include all main pages (removed redundant projects page - projects are on homepage)
+- [x] Updated `robots.txt` to reference sitemap
+- [ ] Submit sitemap to Google Search Console (manual step for after deployment)
 
 ### 6. **Image Optimization**
 - [ ] Remove `images: { unoptimized: true }` from `next.config.mjs`
