@@ -18,9 +18,9 @@ export function ProjectsDesktop({
       )}
 
       <div className="space-y-4">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div
-            key={index}
+            key={project.name}
             className="rounded-xl border bg-card text-card-foreground shadow p-6 hover:shadow-lg transition-all"
           >
             <div className="flex items-start gap-6">
