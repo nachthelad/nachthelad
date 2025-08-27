@@ -4,13 +4,6 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Vibe+Coder+%F0%9F%92%AB;React+%26+Next.js+Enthusiast;Creative+Problem+Solver" alt="Typing SVG" />
 </div>
 
-<br/>
-
-> 💭 **Transformando ideas en código limpio y experiencias web únicas**  
-> Soy un vibe coder apasionado por crear soluciones web modernas que no solo funcionan, sino que inspiran.
-
-<br/>
-
 ## 🚀 Sobre mí
 
 - 🎨 **Vibe Coder** especializado en experiencias web creativas
@@ -33,7 +26,7 @@
 ### 🎨 Design & Tools
 
 <p>
-  <img src="https://skillicons.dev/icons?i=figma,vscode,git,github,vercel,netlify" alt="Tools & Design" />
+  <img src="https://skillicons.dev/icons?i=vscode,git,github,vercel,netlify" alt="Tools & Design" />
 </p>
 
 ### 🗄️ Backend & Database (Learning)
@@ -53,18 +46,14 @@
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nachthelad&layout=compact&langs_count=8&theme=github_dark&hide_border=true"/>
 </div>
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=nachthelad&theme=github-dark-blue&hide_border=true" alt="GitHub Streak" />
-</div>
-
 <br/>
 
 ## 🌟 Proyectos Destacados
 
 - 🎯 **[Portfolio Personal](https://nachthelad.com.ar)** - Mi espacio digital creativo
-- 🌿 **[CannaFriend](https://cannafriend.app)** - Aplicación para el cuidado de plantas
-- 📏 **[DimSure](https://dimsure.online)** - Herramientas de medición y conversión
-- 🔄 **[ConversorTotal](https://conversortotal.online)** - Conversor universal online
+- 🌿 **[Cannafriend](https://cannafriend.app)** - Llevá un registro de la evolución de tus plantas y tu sesiones
+- 📏 **[Dimsure](https://dimsure.online)** - Base de datos de dimensiones de cajas de productos para lógistica
+- 🔄 **[ConversorTotal](https://conversortotal.online)** - Conversor universal online de unidades y monedas
 - ⚽ **[EquipApp](https://equipapp.vercel.app)** - Gestión de equipos deportivos
 
 <br/>
