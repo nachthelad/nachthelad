@@ -8,9 +8,9 @@ import { WebVitals } from "@/components/web-vitals";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ignacio Ventura - Frontend Developer",
+  title: "Ignacio Ventura - Vibe Coder",
   description:
-    "Frontend Developer especializado en React, Next.js, TypeScript y tecnologías web modernas. Creando experiencias web únicas con código limpio y diseño responsive.",
+    "Vibe coder apasionado por crear experiencias web únicas con React, Next.js, TypeScript y tecnologías modernas. Transformando ideas en código limpio y diseños responsive.",
   generator: "Next.js",
   metadataBase: new URL("https://nachthelad.com.ar"),
   verification: {
@@ -20,15 +20,11 @@ export const metadata: Metadata = {
     canonical: "https://nachthelad.com.ar",
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "16x16 32x32", type: "image/x-icon" },
-    ],
-    apple: [
-      { url: "/logo192.png", sizes: "192x192", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.ico", sizes: "16x16 32x32", type: "image/x-icon" }],
+    apple: [{ url: "/logo192.png", sizes: "192x192", type: "image/png" }],
   },
   keywords: [
-    "Frontend Developer",
+    "Vibe Coder",
     "React",
     "Next.js",
     "TypeScript",
@@ -37,6 +33,7 @@ export const metadata: Metadata = {
     "JavaScript",
     "Tailwind CSS",
     "Web Developer Argentina",
+    "Creative Coding",
   ],
   authors: [{ name: "Ignacio Ventura" }],
   creator: "Ignacio Ventura",
@@ -52,9 +49,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ignacio Ventura - Frontend Developer",
+    title: "Ignacio Ventura - Vibe Coder",
     description:
-      "Frontend Developer especializado en React, Next.js, TypeScript y tecnologías web modernas. Creando experiencias web únicas con código limpio y diseño responsive.",
+      "Vibe coder apasionado por crear experiencias web únicas con React, Next.js, TypeScript y tecnologías modernas. Transformando ideas en código limpio y diseños responsive.",
     url: "https://nachthelad.com.ar",
     siteName: "Ignacio Ventura Portfolio",
     locale: "es_AR",
@@ -64,15 +61,15 @@ export const metadata: Metadata = {
         url: "https://nachthelad.com.ar/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ignacio Ventura - Frontend Developer Portfolio",
+        alt: "Ignacio Ventura - Vibe Coder Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ignacio Ventura - Frontend Developer",
+    title: "Ignacio Ventura - Vibe Coder",
     description:
-      "Frontend Developer especializado en React, Next.js, TypeScript y tecnologías web modernas.",
+      "Vibe coder apasionado por React, Next.js, TypeScript y tecnologías modernas. Transformando ideas en código.",
     creator: "@nachthelad",
     images: ["https://nachthelad.com.ar/og-image.png"],
   },
@@ -92,7 +89,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ignacio Ventura",
-    jobTitle: "Frontend Developer",
+    jobTitle: "Vibe Coder",
     url: "https://nachthelad.com.ar",
     sameAs: [
       "https://github.com/nachthelad",
@@ -108,12 +105,13 @@ export default function RootLayout({
       "Next.js",
       "TypeScript",
       "JavaScript",
-      "Frontend Development",
+      "Creative Coding",
       "Web Development",
       "Tailwind CSS",
+      "UI/UX Design",
     ],
     description:
-      "Frontend Developer especializado en React, Next.js, TypeScript y tecnologías web modernas.",
+      "Vibe coder apasionado por crear experiencias web únicas con React, Next.js, TypeScript y tecnologías modernas.",
   };
 
   return (
