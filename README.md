@@ -26,13 +26,13 @@
 ### 🎨 Design & Tools
 
 <p>
-  <img src="https://skillicons.dev/icons?i=vscode,git,github,vercel,netlify" alt="Tools & Design" />
+  <img src="https://skillicons.dev/icons?i=vscode,git,github,vercel" alt="Tools & Design" />
 </p>
 
 ### 🗄️ Backend & Database (Learning)
 
 <p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgresql" alt="Backend Skills" />
+  <img src="https://skillicons.dev/icons?i=mongodb,postgresql" alt="Backend Skills" />
 </p>
 
 </div>
