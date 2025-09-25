@@ -1,8 +1,4 @@
-# 🌟 Ignacio Ventura - Vibe Coder
-
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Vibe+Coder+%F0%9F%92%AB;React+%26+Next.js+Enthusiast;Creative+Problem+Solver" alt="Typing SVG" />
-</div>
+# 🌟 Ignacio Ventura
 
 ## 🚀 Sobre mí
 
