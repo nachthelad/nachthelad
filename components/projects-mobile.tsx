@@ -9,9 +9,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { projects } from "./projects-data";
+import type { Project } from "./projects-data";
 
-export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
+export function ProjectsMobile({
+  hideTitle = false,
+  projects,
+}: {
+  hideTitle?: boolean;
+  projects: Project[];
+}) {
   return (
     <section className="mb-20 lg:hidden">
       {!hideTitle && (
@@ -21,7 +27,7 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
       )}
 
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.filter((p) => !p.hidden).map((project) => (
+        {projects.map((project) => (
           <Card
             key={project.name}
             className="group h-full flex flex-col hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
