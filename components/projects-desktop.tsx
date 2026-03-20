@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { projects } from "./projects-data";
 
@@ -18,7 +18,7 @@ export function ProjectsDesktop({
       )}
 
       <div className="space-y-4">
-        {projects.map((project) => (
+        {projects.filter((p) => !p.hidden).map((project) => (
           <div
             key={project.name}
             className="rounded-xl border bg-card text-card-foreground shadow p-6 hover:shadow-lg transition-all"
@@ -41,19 +41,6 @@ export function ProjectsDesktop({
                         Ver demo
                       </Link>
                     </Button>
-                    {project.github && (
-                      <Button asChild size="default" variant="outline">
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Ver código fuente del proyecto ${project.name}`}
-                        >
-                          <Github className="mr-2 h-4 w-4" />
-                          Código
-                        </Link>
-                      </Button>
-                    )}
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2 max-w-3xl text-left">

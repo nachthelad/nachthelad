@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { projects } from "./projects-data";
 
@@ -21,7 +21,7 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
       )}
 
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
+        {projects.filter((p) => !p.hidden).map((project) => (
           <Card
             key={project.name}
             className="group h-full flex flex-col hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
@@ -46,7 +46,7 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
                   </Badge>
                 ))}
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 gap-2">
                 <Button asChild className="w-full">
                   <Link
                     href={project.link}
@@ -58,19 +58,6 @@ export function ProjectsMobile({ hideTitle = false }: { hideTitle?: boolean }) {
                     Ver demo
                   </Link>
                 </Button>
-                {project.github && (
-                  <Button asChild variant="outline" className="w-full">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Ver código fuente del proyecto ${project.name}`}
-                    >
-                      <Github className="mr-2 h-4 w-4" />
-                      Código
-                    </Link>
-                  </Button>
-                )}
               </div>
             </CardContent>
           </Card>
