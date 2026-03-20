@@ -1,7 +1,11 @@
 import { Header } from "@/components/header";
+import { getProjects } from "@/lib/notion";
 import dynamic from "next/dynamic";
+import type { Project } from "@/components/projects-data";
 
-// Lazy load non-critical components
+// Revalidate every 10 minutes — Notion changes appear within 10 minutes, no deploy needed
+export const revalidate = 600;
+
 const ProjectsMobile = dynamic(
   () =>
     import("@/components/projects-mobile").then((mod) => ({
@@ -46,7 +50,14 @@ const Contact = dynamic(
   }
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+  let projects: Project[] = [];
+  try {
+    projects = await getProjects();
+  } catch (err) {
+    console.error("[Notion] Error fetching projects:", err);
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <main
@@ -54,8 +65,8 @@ export default function HomePage() {
         className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center animate-in fade-in duration-700"
       >
         <Header />
-        <ProjectsMobile />
-        <ProjectsDesktop />
+        <ProjectsMobile projects={projects} />
+        <ProjectsDesktop projects={projects} />
         <Technical />
         <Contact />
       </main>

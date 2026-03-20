@@ -2,12 +2,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { projects } from "./projects-data";
+import type { Project } from "./projects-data";
 
 export function ProjectsDesktop({
   hideTitle = false,
+  projects,
 }: {
   hideTitle?: boolean;
+  projects: Project[];
 }) {
   return (
     <section className="mb-20 hidden lg:block">
@@ -18,7 +20,7 @@ export function ProjectsDesktop({
       )}
 
       <div className="space-y-4">
-        {projects.filter((p) => !p.hidden).map((project) => (
+        {projects.map((project) => (
           <div
             key={project.name}
             className="rounded-xl border bg-card text-card-foreground shadow p-6 hover:shadow-lg transition-all"

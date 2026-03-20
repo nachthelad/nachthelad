@@ -5,7 +5,11 @@
       "Bash(npm run lint)",
       "Bash(npx tsc:*)",
       "Bash(npm run build:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "mcp__5dab74ee-b137-4175-bd42-d017a4b01fb3__notion-create-pages",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm remove:*)"
     ],
     "deny": [],
     "ask": []
