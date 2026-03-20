@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import Link from "next/link"
 import { CONTACT_INFO } from "@/lib/constants"
 
@@ -8,6 +8,10 @@ export function Header() {
       <div className="space-y-6">
         <h1 className="text-4xl sm:text-5xl font-light text-foreground">Ignacio Ventura</h1>
         <p className="text-lg sm:text-xl text-muted-foreground">Frontend Developer</p>
+
+        <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          Desarrollo aplicaciones web modernas con React y Next.js, enfocado en experiencia de usuario y código limpio. Trabajo tanto en proyectos propios como para clientes, desde herramientas de productividad hasta plataformas con IA.
+        </p>
 
         <div className="flex justify-center gap-6 pt-4">
           <Link
@@ -27,6 +31,15 @@ export function Header() {
             aria-label="Perfil de GitHub de Ignacio Ventura"
           >
             <Github className="h-6 w-6" />
+          </Link>
+          <Link
+            href={CONTACT_INFO.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Perfil de Twitter/X de Ignacio Ventura"
+          >
+            <Twitter className="h-6 w-6" />
           </Link>
           <Link
             href={`mailto:${CONTACT_INFO.email}`}
