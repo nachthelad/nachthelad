@@ -10,6 +10,7 @@ export function Contact() {
           <a
             href={`mailto:${CONTACT_INFO.email}`}
             className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Enviar email a Ignacio Ventura"
           >
             {CONTACT_INFO.email}
           </a>
@@ -33,6 +34,15 @@ export function Contact() {
             aria-label="Ver perfil de LinkedIn de Ignacio Ventura"
           >
             LinkedIn
+          </a>
+          <a
+            href={CONTACT_INFO.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Perfil de Twitter/X de Ignacio Ventura"
+          >
+            Twitter
           </a>
         </div>
       </div>

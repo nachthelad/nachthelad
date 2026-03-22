@@ -3,7 +3,6 @@ export type Project = {
   description: string;
   technologies: string[];
   link: string;
-  github?: string;
   hidden?: boolean;
 };
 
@@ -29,7 +28,6 @@ export const projects: Project[] = [
       "Aplicación web construida con Next.js y TypeScript con utilidades avanzadas de parsing y procesamiento de datos.",
     technologies: ["React", "Next.js", "TypeScript"],
     link: "https://tolva.vercel.app",
-    github: "https://github.com/nachthelad/tolva",
   },
   {
     name: "ConversorTotal",
@@ -56,7 +54,6 @@ export const projects: Project[] = [
       "Datos en tiempo real",
     ],
     link: "https://verdurita.com.ar",
-    github: "https://github.com/nachthelad/verdurita",
   },
   {
     name: "Equipapp",
@@ -64,7 +61,6 @@ export const projects: Project[] = [
       "Creación de equipos equilibrados para partidos de fútbol con algoritmos de balanceo.",
     technologies: ["React", "Firebase", "Material-UI", "Algoritmos"],
     link: "https://equipapp.vercel.app/",
-    github: "https://github.com/nachthelad/equipapp",
   },
   {
     name: "WhatsappNow",
@@ -72,7 +68,6 @@ export const projects: Project[] = [
       "Envia mensajes por WhatsApp sin agendar contactos. Interfaz limpia e intuitiva para resolver un problema cotidiano.",
     technologies: ["React", "Firebase", "PWA", "Material-UI"],
     link: "https://whatsappnow.vercel.app/",
-    github: "https://github.com/nachthelad/whatsappnow",
   },
   {
     name: "MarAbierto",
@@ -80,6 +75,5 @@ export const projects: Project[] = [
       "Marketplace de NFTs construido sobre la red Ethereum. Permite explorar, comprar y vender colecciones digitales con una interfaz moderna.",
     technologies: ["React", "Material-UI", "Web3", "Ethereum"],
     link: "https://marabiertoreact.vercel.app/",
-    github: "https://github.com/nachthelad/MarAbierto",
   },
 ];

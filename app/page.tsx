@@ -52,10 +52,12 @@ const Contact = dynamic(
 
 export default async function HomePage() {
   let projects: Project[] = [];
+  let notionError = false;
   try {
     projects = await getProjects();
   } catch (err) {
     console.error("[Notion] Error fetching projects:", err);
+    notionError = true;
   }
 
   return (
@@ -65,8 +67,8 @@ export default async function HomePage() {
         className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center animate-in fade-in duration-700"
       >
         <Header />
-        <ProjectsMobile projects={projects} />
-        <ProjectsDesktop projects={projects} />
+        <ProjectsMobile projects={projects} error={notionError} />
+        <ProjectsDesktop projects={projects} error={notionError} />
         <Technical />
         <Contact />
       </main>
