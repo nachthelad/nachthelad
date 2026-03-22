@@ -14,9 +14,11 @@ import type { Project } from "./projects-data";
 export function ProjectsMobile({
   hideTitle = false,
   projects,
+  error = false,
 }: {
   hideTitle?: boolean;
   projects: Project[];
+  error?: boolean;
 }) {
   return (
     <section className="mb-20 lg:hidden">
@@ -24,6 +26,12 @@ export function ProjectsMobile({
         <h2 className="text-2xl font-medium text-foreground mb-12">
           Proyectos
         </h2>
+      )}
+
+      {error && (
+        <p className="text-sm text-muted-foreground">
+          No pudimos cargar los proyectos en este momento. Intentá de nuevo más tarde.
+        </p>
       )}
 
       <div className="grid gap-6 md:grid-cols-2">

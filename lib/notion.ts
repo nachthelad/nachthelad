@@ -9,7 +9,6 @@ type NotionPage = {
     Description: { rich_text: { plain_text: string }[] };
     Technologies: { multi_select: { name: string }[] };
     Link: { url: string | null };
-    GitHub: { url: string | null };
   };
 };
 
@@ -43,6 +42,5 @@ export async function getProjects(): Promise<Project[]> {
       .join(""),
     technologies: page.properties.Technologies.multi_select.map((t) => t.name),
     link: page.properties.Link.url ?? "",
-    github: page.properties.GitHub.url ?? undefined,
   }));
 }
