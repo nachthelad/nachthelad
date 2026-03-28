@@ -24,6 +24,7 @@ export async function getProjects(): Promise<Project[]> {
       },
       body: JSON.stringify({
         filter: { property: "Hidden", checkbox: { equals: false } },
+        sorts: [{ property: "Order", direction: "ascending" }],
       }),
       next: { revalidate: 600 },
     }
