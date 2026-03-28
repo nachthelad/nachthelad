@@ -4,25 +4,27 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    color-scheme: light;
+    /* Pergamino & Tinta palette */
+    --background: 37 39% 94%;          /* #F5F0E8 crema cálido */
+    --foreground: 30 18% 9%;           /* #1A1612 tinta oscura */
+    --card: 37 37% 89%;                /* #EDE5D8 crema secundario */
+    --card-foreground: 30 18% 9%;
+    --popover: 37 39% 94%;
+    --popover-foreground: 30 18% 9%;
+    --primary: 29 43% 59%;             /* #C4956A terracota/acento */
+    --primary-foreground: 37 39% 94%;
+    --secondary: 37 37% 89%;
+    --secondary-foreground: 30 18% 9%;
+    --muted: 37 37% 89%;               /* #EDE5D8 */
+    --muted-foreground: 33 24% 44%;    /* #8B7355 camel medio */
+    --accent: 29 43% 59%;
+    --accent-foreground: 37 39% 94%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
+    --destructive-foreground: 37 39% 94%;
+    --border: 41 27% 82%;              /* #DDD5C4 */
+    --input: 41 27% 82%;
+    --ring: 29 43% 59%;
     --radius: 0.75rem;
   }
 }
@@ -44,20 +46,21 @@ html {
 ::-webkit-scrollbar {
   width: 4px;
 }
-
 ::-webkit-scrollbar-track {
   @apply bg-transparent;
 }
-
 ::-webkit-scrollbar-thumb {
   @apply bg-muted-foreground/20 rounded-full;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/40;
 }
 
-/* Ensure dark theme always */
-.dark {
-  color-scheme: dark;
+/* Scroll hint bounce */
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.animate-bounce-down {
+  animation: bounce-down 1.8s ease-in-out infinite;
 }

@@ -1,0 +1,146 @@
+<h2>¿Qué dirección de paleta te llama más?</h2>
+<p class="subtitle">Las tres son light-mode, inspiradas en tendencias Pantone 2026 — claras pero con carácter</p>
+
+<style>
+.palette-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.palette-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.palette-card:hover { transform: translateY(-3px); }
+.palette-card.selected { border-color: #6366f1; }
+
+.palette-preview {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  position: relative;
+}
+.palette-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  width: fit-content;
+}
+.palette-name-preview {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.palette-swatches {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+.swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.palette-info {
+  padding: 1rem;
+  background: #fff;
+}
+.palette-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+.palette-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+.palette-letter {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+</style>
+
+<div class="palette-cards">
+
+  <!-- A: Parchment & Ink -->
+  <div class="palette-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="palette-preview" style="background: #F5F0E8; color: #1A1612;">
+      <div class="palette-letter">A</div>
+      <div>
+        <div class="palette-name-preview" style="color: #1A1612;">Ignacio<br>Ventura</div>
+        <div class="palette-tag" style="background: #C4956A; color: #fff; margin-top: 8px;">Open to work</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background: #F5F0E8;"></div>
+        <div class="swatch" style="background: #E8DFD0;"></div>
+        <div class="swatch" style="background: #C4956A;"></div>
+        <div class="swatch" style="background: #1A1612;"></div>
+      </div>
+    </div>
+    <div class="palette-info">
+      <h3>Pergamino & Tinta</h3>
+      <p>Crema cálido + acento terracota/camel. Editorial, atemporal. Pantone Mocha Mousse vibe.</p>
+    </div>
+  </div>
+
+  <!-- B: Arctic Stone -->
+  <div class="palette-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="palette-preview" style="background: #F8F9FB; color: #0D1117;">
+      <div class="palette-letter">B</div>
+      <div>
+        <div class="palette-name-preview" style="color: #0D1117;">Ignacio<br>Ventura</div>
+        <div class="palette-tag" style="background: #2563EB; color: #fff; margin-top: 8px;">Open to work</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background: #F8F9FB;"></div>
+        <div class="swatch" style="background: #E2E8F0;"></div>
+        <div class="swatch" style="background: #2563EB;"></div>
+        <div class="swatch" style="background: #0D1117;"></div>
+      </div>
+    </div>
+    <div class="palette-info">
+      <h3>Piedra & Cobalto</h3>
+      <p>Blanco mineral + azul cobalto. Limpio, técnico, confiable. El clásico que nunca falla.</p>
+    </div>
+  </div>
+
+  <!-- C: Butter & Slate -->
+  <div class="palette-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="palette-preview" style="background: #FEFCE8; color: #1C1917;">
+      <div class="palette-letter">C</div>
+      <div>
+        <div class="palette-name-preview" style="color: #1C1917;">Ignacio<br>Ventura</div>
+        <div class="palette-tag" style="background: #16A34A; color: #fff; margin-top: 8px;">Open to work</div>
+      </div>
+      <div class="palette-swatches">
+        <div class="swatch" style="background: #FEFCE8;"></div>
+        <div class="swatch" style="background: #FEF08A;"></div>
+        <div class="swatch" style="background: #16A34A;"></div>
+        <div class="swatch" style="background: #1C1917;"></div>
+      </div>
+    </div>
+    <div class="palette-info">
+      <h3>Manteca & Pizarra</h3>
+      <p>Amarillo manteca + verde esmeralda. Fresco, optimista, distinto. Pantone S/S 2026 vibes.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top: 1.5rem; text-align: center; font-size: 12px;">Hacé click en la que más te llame — podemos iterar sobre cualquiera de las tres</p>
