@@ -23,19 +23,28 @@ NOTION_API_KEY=...
 NOTION_DATABASE_ID=...
 ```
 
-The Notion database must have these properties: `Name` (title), `Description` (rich_text), `Technologies` (multi_select), `Link` (url), `GitHub` (url), `Hidden` (checkbox).
+The Notion database must have these properties: `Name` (title), `Description` (rich_text), `Technologies` (multi_select), `Link` (url), `Hidden` (checkbox), `Order` (number — used to sort projects ascending).
 
 ## Architecture
 
 This is a single-page personal portfolio deployed on Vercel. It has no routes beyond `/`.
 
-**Data flow:** `app/page.tsx` (Server Component, ISR `revalidate=600`) → `lib/notion.ts` fetches projects from Notion API → passes `Project[]` to client components. If Notion fails, the page renders with an empty projects array (no crash).
+**Data flow:** `app/page.tsx` (Server Component, ISR `revalidate=600`) → `lib/notion.ts` fetches projects from Notion API (sorted by `Order` ascending, filtered by `Hidden=false`) → passes `Project[]` to client components. If Notion fails, the page renders with an empty projects array and an error flag (no crash).
 
-**Component split:** `components/projects-data.ts` holds the `Project` type and a static fallback array (used for reference/type only — runtime data always comes from Notion). `ProjectsMobile` and `ProjectsDesktop` are separate components loaded via `next/dynamic` to split the bundle; they render the same data with different layouts (mobile stacks cards, desktop uses a hover-reveal table).
+**Page structure:** Three full-width sections with distinct backgrounds:
+1. **Hero** (`bg-background`) — `Header` (name, bio, social links) + featured project card (`projects[0]`) + scroll hint
+2. **Projects** (`bg-muted`) — `ProjectsList` showing all projects as a simple list
+3. **Contact** (`bg-foreground`) — `Contact` component on dark background
 
-**All heavy components are dynamically imported** (`Header`, `ProjectsMobile`, `ProjectsDesktop`, `Technical`, `Contact`) to defer JS loading.
+**Components:**
+- `components/header.tsx` — static import; name, bio, social icon links from `lib/constants.ts`
+- `components/projects-list.tsx` — dynamically imported; renders a bordered list of all projects (name + description + external link icon, no tech tags); handles error and empty states
+- `components/contact.tsx` — dynamically imported
+- `components/projects-data.ts` — holds the `Project` type (name, description, technologies, link)
 
-**Dark mode is hardcoded** — `<html className="dark">` in `layout.tsx`. The `theme-toggle` component exists but is not currently used in the layout.
+**Dynamic imports:** `ProjectsList` and `Contact` are loaded via `next/dynamic` to defer JS. `Header` is imported statically.
+
+**Dark mode is not hardcoded** — `layout.tsx` uses `<html lang="es">` without a `className`. Styles rely on CSS variables / Tailwind defaults.
 
 **Constants** for contact info live in `lib/constants.ts`. Update there to change email/social links everywhere at once.
 
