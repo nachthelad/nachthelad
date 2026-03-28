@@ -25,7 +25,7 @@ export async function getProjects(): Promise<Project[]> {
       body: JSON.stringify({
         filter: { property: "Hidden", checkbox: { equals: false } },
       }),
-      next: { revalidate: 3600 },
+      next: { revalidate: 600 },
     }
   );
 

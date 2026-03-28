@@ -17,8 +17,16 @@ export function ProjectsList({
     );
   }
 
+  if (projects.length === 0) {
+    return (
+      <p className="text-sm text-muted-foreground text-center py-8">
+        No hay proyectos disponibles.
+      </p>
+    );
+  }
+
   return (
-    <div className="divide-y divide-border border-t border-border">
+    <div className="divide-y divide-border border-t border-b border-border">
       {projects.map((project) => (
         <Link
           key={project.name}
