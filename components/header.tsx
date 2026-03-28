@@ -10,7 +10,7 @@ export function Header() {
         <p className="text-lg sm:text-xl text-muted-foreground">Frontend Developer</p>
 
         <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          Desarrollo aplicaciones web modernas con React y Next.js, enfocado en experiencia de usuario y código limpio. Trabajo tanto en proyectos propios como para clientes, desde herramientas de productividad hasta plataformas con IA.
+          Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.
         </p>
 
         <div className="flex justify-center gap-6 pt-4">
