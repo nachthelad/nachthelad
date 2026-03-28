@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ignacio Ventura - Frontend Developer",
   description:
-    "Frontend Developer especializado en React y Next.js, enfocado en experiencia de usuario y código limpio. Trabajo en proyectos propios y para clientes, desde herramientas de productividad hasta plataformas con IA.",
+    "Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.",
   generator: "Next.js",
   metadataBase: new URL("https://nachthelad.com.ar"),
   verification: {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ignacio Ventura - Frontend Developer",
     description:
-      "Frontend Developer especializado en React y Next.js, enfocado en experiencia de usuario y código limpio. Trabajo en proyectos propios y para clientes, desde herramientas de productividad hasta plataformas con IA.",
+      "Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.",
     url: "https://nachthelad.com.ar",
     siteName: "Ignacio Ventura Portfolio",
     locale: "es_AR",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ignacio Ventura - Frontend Developer",
     description:
-      "Frontend Developer especializado en React y Next.js. Proyectos propios y para clientes, desde herramientas de productividad hasta plataformas con IA.",
+      "Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.",
     creator: "@nachthelad",
     images: ["https://nachthelad.com.ar/og-image.png"],
   },
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
+  themeColor: "#F5F0E8",
 };
 
 export default function RootLayout({
@@ -117,7 +117,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es" className="dark">
+    <html lang="es">
       <head>
         <script
           type="application/ld+json"

@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     /* Pergamino & Tinta palette */
     --background: 37 39% 94%;          /* #F5F0E8 crema cálido */
     --foreground: 30 18% 9%;           /* #1A1612 tinta oscura */
