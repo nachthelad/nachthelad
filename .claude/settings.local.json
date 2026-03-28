@@ -13,7 +13,10 @@
       "mcp__5dab74ee-b137-4175-bd42-d017a4b01fb3__notion-move-pages",
       "Bash(python3 -c \"from PIL import Image; print\\(''Pillow OK''\\)\")",
       "Bash(pip install:*)",
-      "Bash(python3 gen_og.py)"
+      "Bash(python3 gen_og.py)",
+      "Bash(C:/Users/nacht/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir \"D:/Cosas/Dev/nachthelad\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

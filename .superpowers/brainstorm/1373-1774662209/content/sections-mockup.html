@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup Secciones — Ignacio Ventura</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #F5F0E8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1A1612;
+  }
+
+  /* ─── SECTION 1: HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  .hero-inner { max-width: 560px; width: 100%; }
+
+  .hero-name {
+    font-size: 62px;
+    font-weight: 300;
+    color: #1A1612;
+    letter-spacing: -2.5px;
+    line-height: 1.0;
+  }
+
+  .hero-role {
+    font-size: 17px;
+    color: #8B7355;
+    margin-top: 10px;
+  }
+
+  .hero-bio {
+    font-size: 15px;
+    color: #6B5C48;
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #EDE5D8;
+    border: 1px solid #DDD5C4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B7355;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Featured project card */
+  .featured-card {
+    margin-top: 3rem;
+    background: #EDE5D8;
+    border: 1px solid #DDD5C4;
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .featured-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C4956A;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .featured-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1A1612;
+    letter-spacing: -0.5px;
+  }
+  .featured-desc {
+    font-size: 13px;
+    color: #8B7355;
+    margin-top: 5px;
+    line-height: 1.5;
+    max-width: 320px;
+  }
+  .featured-arrow {
+    font-size: 28px;
+    color: #C4956A;
+    flex-shrink: 0;
+  }
+
+  /* Scroll hint */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: #A89070;
+    letter-spacing: 0.08em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .scroll-arrow {
+    font-size: 18px;
+    color: #C4956A;
+    animation: bounce 1.8s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+
+  /* ─── SECTION 2: ALL PROJECTS ─── */
+  .projects-section {
+    background: #EDE5D8;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-inner { max-width: 560px; width: 100%; }
+
+  .section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #A89070;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .project-list { text-align: left; }
+  .project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #DDD5C4;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  .project-row:first-child { border-top: 1px solid #DDD5C4; }
+  .project-name { font-size: 15px; font-weight: 600; color: #1A1612; }
+  .project-desc { font-size: 12px; color: #8B7355; margin-top: 2px; }
+  .project-arrow { font-size: 16px; color: #C4956A; flex-shrink: 0; }
+
+  /* ─── SECTION 3: CONTACT ─── */
+  .contact-section {
+    background: #1A1612;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-inner { max-width: 560px; width: 100%; }
+
+  .contact-title {
+    font-size: 38px;
+    font-weight: 300;
+    color: #F5F0E8;
+    letter-spacing: -1px;
+  }
+  .contact-sub {
+    font-size: 14px;
+    color: #8B7355;
+    margin-top: 8px;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .contact-link {
+    font-size: 14px;
+    color: #C4956A;
+    text-decoration: none;
+    border-bottom: 1px solid #4A3828;
+    padding-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-name">Ignacio Ventura</h1>
+    <p class="hero-role">Frontend Developer</p>
+    <p class="hero-bio">
+      Desarrollo aplicaciones web modernas con React y Next.js, enfocado en experiencia de usuario y código limpio. Trabajo tanto en proyectos propios como para clientes, desde herramientas de productividad hasta plataformas con IA.
+    </p>
+
+    <div class="social-links">
+      <div class="social-link">in</div>
+      <div class="social-link">gh</div>
+      <div class="social-link">𝕏</div>
+      <div class="social-link">@</div>
+    </div>
+
+    <div class="featured-card">
+      <div>
+        <div class="featured-label">Proyecto destacado</div>
+        <div class="featured-name">Cannafriend</div>
+        <div class="featured-desc">Diario de cultivo y consumo con análisis de plantas por IA y registro de fotos, tareas y sesiones.</div>
+      </div>
+      <div class="featured-arrow">↗</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Proyectos</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="projects-inner">
+    <div class="section-label">Todos los proyectos</div>
+    <div class="project-list">
+      <div class="project-row">
+        <div>
+          <div class="project-name">Tolva</div>
+          <div class="project-desc">Parsing y procesamiento avanzado de datos</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-row">
+        <div>
+          <div class="project-name">ConversorTotal</div>
+          <div class="project-desc">Conversión de unidades y monedas con tasas en tiempo real</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-row">
+        <div>
+          <div class="project-name">Verdurita</div>
+          <div class="project-desc">Seguimiento de tipos de cambio en Argentina</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-row">
+        <div>
+          <div class="project-name">Equipapp</div>
+          <div class="project-desc">Armado de equipos equilibrados para partidos de fútbol</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-row">
+        <div>
+          <div class="project-name">WhatsappNow</div>
+          <div class="project-desc">Iniciá conversaciones de WhatsApp sin guardar el contacto</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-row">
+        <div>
+          <div class="project-name">MarAbierto</div>
+          <div class="project-desc">...</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <div class="project-row" style="border-bottom:none;">
+        <div>
+          <div class="project-name">Dimsure</div>
+          <div class="project-desc">Medición y cálculo de dimensiones precisas</div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2 class="contact-title">¿Hablamos?</h2>
+    <p class="contact-sub">Abierto a oportunidades y proyectos interesantes.</p>
+    <div class="contact-links">
+      <a class="contact-link">nachthelad.dev@gmail.com</a>
+      <a class="contact-link">LinkedIn</a>
+      <a class="contact-link">GitHub</a>
+      <a class="contact-link">Twitter</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
