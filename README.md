@@ -25,10 +25,10 @@
   <img src="https://skillicons.dev/icons?i=vscode,git,github,vercel" alt="Tools & Design" />
 </p>
 
-### 🗄️ Backend & Database (Learning)
+### 🗄️ Backend & Database (Aprendiendo)
 
 <p>
-  <img src="https://skillicons.dev/icons?i=mongodb,postgresql" alt="Backend Skills" />
+  <img src="https://skillicons.dev/icons?i=mongodb,postgresql,supabase" alt="Backend Skills" />
 </p>
 
 </div>
