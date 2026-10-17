@@ -90,28 +90,28 @@ export default async function HomePage() {
       </section>
 
       {/* ── Sección 3: Contacto ── */}
-      <section className="py-20 px-4 sm:px-6 bg-foreground text-center">
+      <footer className="py-20 px-4 sm:px-6 bg-foreground text-center">
         <div className="w-full max-w-2xl mx-auto">
           <Contact />
+          <div className="mt-8 flex justify-center">
+            <a
+              href="https://cafecito.app/nachthelad"
+              rel="noopener"
+              target="_blank"
+              className="inline-flex rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+            >
+              <img
+                srcSet="https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x"
+                src="https://cdn.cafecito.app/imgs/buttons/button_1.png"
+                alt="Invitame un café en cafecito.app"
+                loading="lazy"
+                className="max-w-full h-auto"
+              />
+            </a>
+          </div>
         </div>
-      </section>
-
-      <footer className="flex justify-center px-4 py-8 bg-background">
-        <a
-          href="https://cafecito.app/nachthelad"
-          rel="noopener"
-          target="_blank"
-          className="inline-flex rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
-        >
-          <img
-            srcSet="https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x"
-            src="https://cdn.cafecito.app/imgs/buttons/button_1.png"
-            alt="Invitame un café en cafecito.app"
-            loading="lazy"
-            className="max-w-full h-auto"
-          />
-        </a>
       </footer>
+
     </main>
   );
 }
