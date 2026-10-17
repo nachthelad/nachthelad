@@ -8,9 +8,9 @@ import { WebVitals } from "@/components/web-vitals";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ignacio Ventura - Frontend Developer",
+  title: "Ignacio Ventura",
   description:
-    "Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.",
+    "Me gusta vibecodear cosas que se me vienen a la cabeza, compartirlas e ir mejorándolas con el feedback de quienes las prueban.",
   generator: "Next.js",
   metadataBase: new URL("https://nachthelad.com.ar"),
   verification: {
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ignacio Ventura - Frontend Developer",
+    title: "Ignacio Ventura",
     description:
-      "Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.",
+      "Me gusta vibecodear cosas que se me vienen a la cabeza, compartirlas e ir mejorándolas con el feedback de quienes las prueban.",
     url: "https://nachthelad.com.ar",
     siteName: "Ignacio Ventura Portfolio",
     locale: "es_AR",
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ignacio Ventura - Frontend Developer",
+    title: "Ignacio Ventura",
     description:
-      "Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.",
+      "Me gusta vibecodear cosas que se me vienen a la cabeza, compartirlas e ir mejorándolas con el feedback de quienes las prueban.",
     creator: "@nachthelad",
     images: ["https://nachthelad.com.ar/og-image.png"],
   },

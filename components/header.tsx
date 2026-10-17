@@ -7,10 +7,9 @@ export function Header() {
     <header className="mb-20">
       <div className="space-y-6">
         <h1 className="text-4xl sm:text-5xl font-light text-foreground">Ignacio Ventura</h1>
-        <p className="text-lg sm:text-xl text-muted-foreground">Frontend Developer</p>
 
         <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          Hago que las cosas funcionen — y se vean bien. Trabajo en proyectos propios y con clientes que necesitan construir algo concreto.
+          Me gusta vibecodear cosas que se me vienen a la cabeza, compartirlas e ir mejorándolas con el feedback de quienes las prueban.
         </p>
 
         <div className="flex justify-center gap-6 pt-4">
