@@ -3,8 +3,20 @@ import type { Project } from "@/components/projects-data";
 const DATABASE_ID = process.env.NOTION_DATABASE_ID!;
 const NOTION_API_KEY = process.env.NOTION_API_KEY!;
 
+type FileImage =
+  | { type: "file"; file: { url: string } }
+  | { type: "external"; external: { url: string } };
+type Avatar = { emoji: string } | { src: string };
+
+export type PortfolioEntry = Project & { id: string; type: string; avatar: Avatar | null };
+
 type NotionPage = {
+  id: string;
+  icon?: FileImage | { type: "emoji"; emoji: string } | { type: "custom_emoji"; custom_emoji: { url: string } } | null;
+  cover?: FileImage | null;
   properties: {
+    Type?: { select: { name: string } | null };
+    Image?: { files?: FileImage[]; url?: string };
     Name: { title: { plain_text: string }[] };
     Description: { rich_text: { plain_text: string }[] };
     Technologies: { multi_select: { name: string }[] };
@@ -12,7 +24,18 @@ type NotionPage = {
   };
 };
 
-export async function getProjects(): Promise<Project[]> {
+function imageUrl(image?: FileImage | null) {
+  return image?.type === "file" ? image.file.url : image?.external?.url;
+}
+
+function getAvatar({ icon, properties, cover }: NotionPage): Avatar | null {
+  if (icon?.type === "emoji") return { emoji: icon.emoji };
+  const iconUrl = icon?.type === "custom_emoji" ? icon.custom_emoji.url : imageUrl(icon);
+  const src = iconUrl || imageUrl(properties.Image?.files?.[0]) || properties.Image?.url || imageUrl(cover);
+  return src ? { src } : null;
+}
+
+export async function getProjects(): Promise<PortfolioEntry[]> {
   const res = await fetch(
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     {
@@ -37,6 +60,9 @@ export async function getProjects(): Promise<Project[]> {
   const data = await res.json();
 
   return (data.results as NotionPage[]).map((page) => ({
+    id: page.id,
+    type: page.properties.Type?.select?.name || "Project",
+    avatar: page.properties.Type?.select?.name === "Bot" ? getAvatar(page) : null,
     name: page.properties.Name.title.map((t) => t.plain_text).join(""),
     description: page.properties.Description.rich_text
       .map((t) => t.plain_text)
