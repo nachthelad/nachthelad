@@ -2,6 +2,8 @@ import { Header } from "@/components/header";
 import { getProjects } from "@/lib/notion";
 import dynamic from "next/dynamic";
 import { PortfolioDirectory } from "@/components/portfolio-directory";
+import { ProjectsList } from "@/components/projects-list";
+import { Suspense } from "react";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -73,8 +75,10 @@ export default async function HomePage() {
 
       {/* ── Sección 2: Proyectos ── */}
       <section className="py-20 px-4 sm:px-6 bg-muted">
-        <div className="w-full max-w-2xl mx-auto">
-          <PortfolioDirectory projects={projects} bots={bots} error={notionError} />
+        <div id="portfolio" className="w-full max-w-2xl mx-auto scroll-mt-8">
+          <Suspense fallback={<ProjectsList projects={projects} error={notionError} />}>
+            <PortfolioDirectory projects={projects} bots={bots} error={notionError} />
+          </Suspense>
         </div>
       </section>
 

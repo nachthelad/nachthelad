@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import type { PortfolioEntry } from "@/lib/notion";
 import { ProjectsList } from "./projects-list";
-
-function botsSelected() {
-  return new URLSearchParams(window.location.search).get("view") === "bots";
-}
 
 function BotAvatar({ bot }: { bot: PortfolioEntry }) {
   const [failedImage, setFailedImage] = useState("");
@@ -46,27 +43,21 @@ function BotsList({ bots, error }: { bots: PortfolioEntry[]; error: boolean }) {
 }
 
 export function PortfolioDirectory({ projects, bots, error }: { projects: PortfolioEntry[]; bots: PortfolioEntry[]; error: boolean }) {
-  const [showBots, setShowBots] = useState(false);
-  const directory = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const syncView = () => setShowBots(botsSelected());
-    syncView();
-    if (botsSelected()) directory.current?.scrollIntoView({ behavior: "instant" });
-    window.addEventListener("popstate", syncView);
-    return () => window.removeEventListener("popstate", syncView);
-  }, []);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const showBots = searchParams.get("view") === "bots";
 
   function selectView(bots: boolean) {
-    const url = new URL(window.location.href);
-    if (bots) url.searchParams.set("view", "bots");
-    else url.searchParams.delete("view");
-    if (url.href !== window.location.href) window.history.pushState(null, "", url);
-    setShowBots(bots);
+    const params = new URLSearchParams(searchParams);
+    if (bots) params.set("view", "bots");
+    else params.delete("view");
+    const query = params.toString();
+    router.push(`${pathname}${query ? `?${query}` : ""}#portfolio`, { scroll: false });
   }
 
   return (
-    <div ref={directory} className="scroll-mt-8">
+    <>
       <div role="group" aria-label="Vista del portfolio" className="mx-auto mb-8 flex w-fit gap-1 rounded-full border bg-background p-1">
         {(["Proyectos", "Bots"] as const).map((label) => (
           <button key={label} type="button" aria-pressed={showBots === (label === "Bots")} onClick={() => selectView(label === "Bots")}
@@ -76,6 +67,6 @@ export function PortfolioDirectory({ projects, bots, error }: { projects: Portfo
         ))}
       </div>
       {showBots ? <BotsList bots={bots} error={error} /> : <ProjectsList projects={projects} error={error} />}
-    </div>
+    </>
   );
 }
