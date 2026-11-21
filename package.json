@@ -6,7 +6,7 @@
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "eslint app components lib",
     "start": "next start"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
     "@next/bundle-analyzer": "^15.5.0",
     "@types/node": "^22",
     "@types/react": "^19",

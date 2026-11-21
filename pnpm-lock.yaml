@@ -60,6 +60,9 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
     devDependencies:
+      '@eslint/eslintrc':
+        specifier: ^3.3.3
+        version: 3.3.3
       '@next/bundle-analyzer':
         specifier: ^15.5.0
         version: 15.5.7

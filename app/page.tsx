@@ -1,22 +1,12 @@
 import { Header } from "@/components/header";
 import { getProjects } from "@/lib/notion";
 import dynamic from "next/dynamic";
-import type { Project } from "@/components/projects-data";
+import { PortfolioDirectory } from "@/components/portfolio-directory";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 // Revalidate every 10 minutes — Notion changes appear within 10 minutes, no deploy needed
 export const revalidate = 600;
-
-const ProjectsList = dynamic(
-  () =>
-    import("@/components/projects-list").then((mod) => ({
-      default: mod.ProjectsList,
-    })),
-  {
-    loading: () => <div className="py-4 text-sm text-muted-foreground">Cargando proyectos...</div>,
-  }
-);
 
 const Contact = dynamic(
   () =>
@@ -27,16 +17,18 @@ const Contact = dynamic(
 );
 
 export default async function HomePage() {
-  let projects: Project[] = [];
+  let entries: Awaited<ReturnType<typeof getProjects>> = [];
   let notionError = false;
   try {
-    projects = await getProjects();
+    entries = await getProjects();
   } catch (err) {
     console.error("[Notion] Error fetching projects:", err);
     notionError = true;
   }
 
-  const featuredProject = projects[0] ?? null;
+  const projects = entries.filter((entry) => entry.type === "Project");
+  const bots = entries.filter((entry) => entry.type === "Bot");
+  const featuredProject = projects[0];
 
   return (
     <main id="main-content" className="animate-in fade-in duration-700">
@@ -82,10 +74,7 @@ export default async function HomePage() {
       {/* ── Sección 2: Proyectos ── */}
       <section className="py-20 px-4 sm:px-6 bg-muted">
         <div className="w-full max-w-2xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-8 text-center">
-            Todos los proyectos
-          </p>
-          <ProjectsList projects={projects} error={notionError} />
+          <PortfolioDirectory projects={projects} bots={bots} error={notionError} />
         </div>
       </section>
 
