@@ -53,14 +53,6 @@ export const metadata: Metadata = {
     siteName: "Ignacio Ventura Portfolio",
     locale: "es_AR",
     type: "website",
-    images: [
-      {
-        url: "https://nachthelad.com.ar/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Ignacio Ventura - Vibe Coder Portfolio",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -68,7 +60,6 @@ export const metadata: Metadata = {
     description:
       "Me gusta vibecodear cosas que se me vienen a la cabeza, compartirlas e ir mejorándolas con el feedback de quienes las prueban.",
     creator: "@nachthelad",
-    images: ["https://nachthelad.com.ar/og-image.png"],
   },
 };
 
