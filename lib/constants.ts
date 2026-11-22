@@ -4,4 +4,5 @@ export const CONTACT_INFO = {
   github: "https://github.com/nachthelad",
   linkedin: "https://www.linkedin.com/in/ignacio-ventura/",
   twitter: "https://x.com/nachthelad",
+  cafecito: "https://cafecito.app/nachthelad",
 } as const;

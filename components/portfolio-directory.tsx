@@ -60,13 +60,13 @@ export function PortfolioDirectory({ projects, bots, error }: { projects: Portfo
 
   return (
     <>
-      <div role="group" aria-label="Vista del portfolio" className="mx-auto relative mb-8 grid w-fit grid-cols-2 rounded-full border bg-muted p-1">
-        <span aria-hidden="true" className="pointer-events-none absolute inset-1">
+      <div role="group" aria-label="Vista del portfolio" className="mx-auto relative mb-8 grid w-fit grid-cols-2 rounded-full border bg-muted p-0.5">
+        <span aria-hidden="true" className="pointer-events-none absolute inset-0.5">
           <span className={`block h-full w-1/2 rounded-full bg-secondary transition-transform duration-300 ease-[cubic-bezier(.4,0,.2,1)] motion-reduce:transition-none ${showBots ? "translate-x-full" : "translate-x-0"}`} />
         </span>
         {(["Proyectos", "Bots"] as const).map((label) => (
           <button key={label} type="button" aria-pressed={showBots === (label === "Bots")} onClick={() => selectView(label === "Bots")}
-            className="relative min-h-11 rounded-full px-5 text-sm font-medium text-muted-foreground hover:text-primary aria-pressed:text-white focus-visible:outline-ring focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+            className="relative min-h-10 rounded-full px-4 text-[13px] font-medium text-muted-foreground hover:text-primary aria-pressed:text-white focus-visible:outline-ring focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:min-h-9">
             {label}
           </button>
         ))}
