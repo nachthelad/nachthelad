@@ -4,8 +4,6 @@ import dynamic from "next/dynamic";
 import { PortfolioDirectory } from "@/components/portfolio-directory";
 import { ProjectsList } from "@/components/projects-list";
 import { Suspense } from "react";
-import { ExternalLink } from "lucide-react";
-import Link from "next/link";
 
 // Revalidate every 10 minutes — Notion changes appear within 10 minutes, no deploy needed
 export const revalidate = 600;
@@ -30,51 +28,17 @@ export default async function HomePage() {
 
   const projects = entries.filter((entry) => entry.type === "Project");
   const bots = entries.filter((entry) => entry.type === "Bot");
-  const featuredProject = projects[0];
 
   return (
     <main id="main-content" className="animate-in fade-in duration-700">
 
       {/* ── Sección 1: Hero ── */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 py-16 bg-background relative">
-        <div className="w-full max-w-2xl mx-auto">
-          <Header />
-
-          {featuredProject && (
-            <Link
-              href={featuredProject.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ver proyecto destacado: ${featuredProject.name}`}
-              className="mt-10 block rounded-2xl bg-card border border-border px-6 py-5 text-left group hover:border-primary/40 transition-colors"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-                Proyecto destacado
-              </p>
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {featuredProject.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                    {featuredProject.description}
-                  </p>
-                </div>
-                <ExternalLink className="h-5 w-5 text-primary shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" />
-              </div>
-            </Link>
-          )}
-        </div>
-
-        {/* Scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="text-xs uppercase tracking-widest">Proyectos</span>
-          <span className="text-lg animate-bounce-down">↓</span>
-        </div>
+      <section className="px-4 pt-12 pb-8 text-center sm:px-6 sm:pt-16">
+        <Header />
       </section>
 
       {/* ── Sección 2: Proyectos ── */}
-      <section className="py-20 px-4 sm:px-6 bg-muted">
+      <section className="pt-6 pb-20 px-4 sm:px-6 bg-muted">
         <div id="portfolio" className="w-full max-w-2xl mx-auto scroll-mt-8">
           <Suspense fallback={<ProjectsList projects={projects} error={notionError} />}>
             <PortfolioDirectory projects={projects} bots={bots} error={notionError} />

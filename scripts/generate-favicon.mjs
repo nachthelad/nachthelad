@@ -1,21 +1,21 @@
 /**
- * Convierte public/logo.svg a public/favicon.ico (16x16, 32x32, 48x48)
- * Uso: node scripts/generate-favicon.mjs
- * Deps temporales: npm install --save-dev sharp png-to-ico
+ * Regenera los íconos desde app/icon.svg.
+ * Dependencias temporales: sharp y png-to-ico.
  */
 import sharp from 'sharp';
 import pngToIco from 'png-to-ico';
-import { readFileSync, writeFileSync } from 'fs';
+import { copyFile, writeFile } from 'node:fs/promises';
 
-const svg = readFileSync('./public/logo.svg');
+const source = 'app/icon.svg';
+await copyFile(source, 'public/logo.svg');
+const frames = await Promise.all([16, 32, 48].map(size =>
+  sharp(source, { density: 384 }).resize(size, size).png().toBuffer()
+));
+await writeFile('public/favicon.ico', await pngToIco(frames));
 
-const pngBuffers = await Promise.all(
-  [16, 32, 48].map(size =>
-    sharp(svg).resize(size, size).png().toBuffer()
-  )
-);
-
-const ico = await pngToIco(pngBuffers);
-writeFileSync('./public/favicon.ico', ico);
-
-console.log('✓ public/favicon.ico generado (16, 32, 48px)');
+// Relleno opaco hasta el borde para los recortes de iOS y Android.
+for (const size of [180, 192, 512]) {
+  const file = size === 180 ? 'app/apple-icon.png' : `public/logo${size}.png`;
+  await sharp(source, { density: 3072 }).resize(size, size)
+    .flatten({ background: '#1A1612' }).png().toFile(file);
+}

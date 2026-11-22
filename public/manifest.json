@@ -1,11 +1,11 @@
 {
   "short_name": "Ignacio Ventura",
-  "name": "Ignacio Ventura - Frontend Developer",
-  "description": "Frontend Developer especializado en React, Next.js y tecnologías web modernas",
+  "name": "Ignacio Ventura",
+  "description": "Proyectos y bots que voy creando y compartiendo.",
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "16x16 32x32",
+      "sizes": "16x16 32x32 48x48",
       "type": "image/x-icon"
     },
     {

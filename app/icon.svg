@@ -1,10 +1,7 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="100" height="100" rx="18" fill="#1A1612"/>
-  <!-- N letterform: left bar -->
-  <rect x="11" y="11" width="20" height="78" fill="#C4956A"/>
-  <!-- N letterform: right bar -->
-  <rect x="69" y="11" width="20" height="78" fill="#C4956A"/>
-  <!-- N letterform: diagonal -->
-  <polygon points="11,11 31,11 89,89 69,89" fill="#C4956A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <rect width="16" height="16" rx="3" fill="#1A1612"/>
+  <g fill="#C4956A">
+    <path d="M3 5.5 4.5 4 9 8l-4.5 4L3 10.5 6 8Z"/>
+    <path d="M10.5 4H13v8h-2.5z"/>
+  </g>
 </svg>

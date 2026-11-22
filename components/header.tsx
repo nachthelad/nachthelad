@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/lib/constants"
 
 export function Header() {
   return (
-    <header className="mb-20">
+    <header>
       <div className="space-y-6">
         <h1 className="text-4xl sm:text-5xl font-light text-foreground">Ignacio Ventura</h1>
 
