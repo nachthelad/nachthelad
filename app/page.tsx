@@ -38,7 +38,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Sección 2: Proyectos ── */}
-      <section className="pt-6 pb-20 px-4 sm:px-6 border-t">
+      <section className="pt-6 pb-20 px-4 sm:px-6">
         <div id="portfolio" className="w-full max-w-2xl mx-auto scroll-mt-8">
           <Suspense fallback={<ProjectsList projects={projects} error={notionError} />}>
             <PortfolioDirectory projects={projects} bots={bots} error={notionError} />
@@ -47,7 +47,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Sección 3: Contacto ── */}
-      <footer className="py-20 px-4 sm:px-6 border-t text-center">
+      <footer className="py-20 px-4 sm:px-6 text-center">
         <div className="w-full max-w-2xl mx-auto">
           <Contact />
           <div className="mt-8 flex justify-center">
