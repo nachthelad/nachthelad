@@ -17,7 +17,7 @@ export function Header() {
             href={CONTACT_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-primary hover:text-primary/80 transition-colors"
             aria-label="Perfil de LinkedIn de Ignacio Ventura"
           >
             <Linkedin className="h-6 w-6" />
@@ -26,7 +26,7 @@ export function Header() {
             href={CONTACT_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-primary hover:text-primary/80 transition-colors"
             aria-label="Perfil de GitHub de Ignacio Ventura"
           >
             <Github className="h-6 w-6" />
@@ -35,14 +35,14 @@ export function Header() {
             href={CONTACT_INFO.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-primary hover:text-primary/80 transition-colors"
             aria-label="Perfil de Twitter/X de Ignacio Ventura"
           >
             <Twitter className="h-6 w-6" />
           </Link>
           <Link
             href={`mailto:${CONTACT_INFO.email}`}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-primary hover:text-primary/80 transition-colors"
             aria-label="Enviar email a Ignacio Ventura"
           >
             <Mail className="h-6 w-6" />

@@ -4,27 +4,26 @@
 
 @layer base {
   :root {
-    color-scheme: light;
-    /* Pergamino & Tinta palette */
-    --background: 37 39% 94%;          /* #F5F0E8 crema cálido */
-    --foreground: 30 18% 9%;           /* #1A1612 tinta oscura */
-    --card: 37 37% 89%;                /* #EDE5D8 crema secundario */
-    --card-foreground: 30 18% 9%;
-    --popover: 37 39% 94%;
-    --popover-foreground: 30 18% 9%;
-    --primary: 29 43% 59%;             /* #C4956A terracota/acento */
-    --primary-foreground: 37 39% 94%;
-    --secondary: 37 37% 89%;
-    --secondary-foreground: 30 18% 9%;
-    --muted: 37 37% 89%;               /* #EDE5D8 */
-    --muted-foreground: 33 24% 44%;    /* #8B7355 camel medio */
-    --accent: 29 43% 59%;
-    --accent-foreground: 37 39% 94%;
+    color-scheme: dark;
+    --background: 0 0% 3.92%;          /* #0a0a0a */
+    --foreground: 0 0% 92.94%;         /* #ededed */
+    --muted: 0 0% 10.98%;              /* #1c1c1c */
+    --muted-foreground: 0 0% 63.14%;   /* #a1a1a1 */
+    --secondary: 0 0% 18.04%;          /* #2e2e2e */
+    --secondary-foreground: var(--foreground);
+    --card: var(--muted);
+    --card-foreground: var(--foreground);
+    --popover: var(--muted);
+    --popover-foreground: var(--foreground);
+    --primary: 28.67 43.27% 59.22%;    /* #C4956A */
+    --primary-foreground: var(--background);
+    --accent: var(--primary);
+    --accent-foreground: var(--background);
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 37 39% 94%;
-    --border: 41 27% 82%;              /* #DDD5C4 */
-    --input: 41 27% 82%;
-    --ring: 29 43% 59%;
+    --destructive-foreground: var(--foreground);
+    --border: 0 0% 12.16%;             /* #1f1f1f */
+    --input: var(--border);
+    --ring: var(--primary);
     --radius: 0.75rem;
   }
 }
