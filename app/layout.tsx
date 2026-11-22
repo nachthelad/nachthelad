@@ -20,9 +20,6 @@ export const metadata: Metadata = {
     canonical: "https://nachthelad.com.ar",
   },
   manifest: "/manifest.json",
-  icons: {
-    icon: [{ url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" }],
-  },
   keywords: [
     "Vibe Coder",
     "React",
