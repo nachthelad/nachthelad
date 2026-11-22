@@ -4,6 +4,8 @@ const DATABASE_ID = process.env.NOTION_DATABASE_ID!;
 const NOTION_API_KEY = process.env.NOTION_API_KEY!;
 
 const projectLogos = new Map([
+  ["rapidapi.com/nachthelad-nachthelad-apis/api/feriados-argentina", "/projects/feriados-argentina.png"],
+  ["rapidapi.com/nachthelad-nachthelad-apis/api/indices-argentina", "/projects/indices-argentina.png"],
   ["nitro-canna.vercel.app", "/projects/nitro.png"],
   ["eliantus.com.ar", "/projects/eliantus.svg"],
   ["equipapp.vercel.app", "/projects/equipapp.png"],
@@ -13,9 +15,10 @@ const projectLogos = new Map([
 
 async function getProjectLogo(link: string | null, hasAvatar: boolean) {
   if (!link || !URL.canParse(link)) return null;
-  const { hostname, protocol } = new URL(link);
+  const { hostname, pathname, protocol } = new URL(link);
   if (protocol !== "https:" && protocol !== "http:") return null;
-  const logo = projectLogos.get(hostname.replace(/^www\./, ""));
+  const host = hostname.replace(/^www\./, "");
+  const logo = projectLogos.get(host + pathname.replace(/\/$/, "")) ?? projectLogos.get(host);
   if (logo || hasAvatar) return logo ?? null;
 
   const favicon = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=64`;
