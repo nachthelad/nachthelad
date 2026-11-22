@@ -1,18 +1,16 @@
-import type { ReactNode } from "react";
-import type { Project } from "./projects-data";
+import type { PortfolioEntry } from "@/lib/notion";
+import { EntryAvatar } from "./entry-avatar";
 
 export function PortfolioListItem({
   entry,
-  avatar,
 }: {
-  entry: Project;
-  avatar?: ReactNode;
+  entry: PortfolioEntry;
 }) {
   const { name, description, link } = entry;
 
   return (
     <li className="group flex items-start gap-3 py-4">
-      {avatar}
+      <EntryAvatar entry={entry} />
       <div className="min-w-0 flex-1">
         <h2 className="break-words font-semibold">
           {link ? (
