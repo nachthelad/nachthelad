@@ -38,7 +38,7 @@ function imageUrl(image?: FileImage | null) {
 function getAvatar({ icon, properties, cover }: NotionPage): Avatar | null {
   const link = properties.Link.url;
   const listing = link && URL.canParse(link) ? new URL(link) : null;
-  if (listing?.origin === "https://grok-bot.directory") {
+  if (properties.Type?.select?.name === "Bot" && listing?.origin === "https://grok-bot.directory") {
     const src = directoryBotAvatars.get(listing.pathname.replace(/\/$/, ""));
     if (src) return { src };
   }
@@ -76,7 +76,7 @@ export async function getProjects(): Promise<PortfolioEntry[]> {
   return (data.results as NotionPage[]).map((page) => ({
     id: page.id,
     type: page.properties.Type?.select?.name || "Project",
-    avatar: page.properties.Type?.select?.name === "Bot" ? getAvatar(page) : null,
+    avatar: getAvatar(page),
     name: page.properties.Name.title.map((t) => t.plain_text).join(""),
     description: page.properties.Description.rich_text
       .map((t) => t.plain_text)

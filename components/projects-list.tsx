@@ -1,11 +1,11 @@
 import { PortfolioListItem } from "./portfolio-list-item";
-import type { Project } from "./projects-data";
+import type { PortfolioEntry } from "@/lib/notion";
 
 export function ProjectsList({
   projects,
   error = false,
 }: {
-  projects: Project[];
+  projects: PortfolioEntry[];
   error?: boolean;
 }) {
   if (error) {
@@ -27,7 +27,7 @@ export function ProjectsList({
   return (
     <ul className="divide-y divide-border border-y">
       {projects.map((project) => (
-        <PortfolioListItem key={project.name} entry={project} />
+        <PortfolioListItem key={project.id} entry={project} />
       ))}
     </ul>
   );

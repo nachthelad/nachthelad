@@ -1,23 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useState } from "react";
 import type { PortfolioEntry } from "@/lib/notion";
 import { PortfolioListItem } from "./portfolio-list-item";
 import { ProjectsList } from "./projects-list";
-
-function BotAvatar({ bot }: { bot: PortfolioEntry }) {
-  const [failedImage, setFailedImage] = useState("");
-  const { avatar } = bot;
-  return (
-    <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-full font-semibold">
-      {avatar && "src" in avatar && avatar.src !== failedImage ? (
-        <Image unoptimized src={avatar.src} width={40} height={40} alt="" className="bot-avatar-art size-full object-cover" onError={() => setFailedImage(avatar.src)} />
-      ) : avatar && "emoji" in avatar ? avatar.emoji : Array.from(bot.name.trim())[0]?.toUpperCase()}
-    </span>
-  );
-}
 
 function BotsList({ bots, error }: { bots: PortfolioEntry[]; error: boolean }) {
   if (error || !bots.length) {
@@ -26,7 +12,7 @@ function BotsList({ bots, error }: { bots: PortfolioEntry[]; error: boolean }) {
   return (
     <ul className="divide-y divide-border border-y">
       {bots.map((bot) => (
-        <PortfolioListItem key={bot.id} entry={bot} avatar={<BotAvatar bot={bot} />} />
+        <PortfolioListItem key={bot.id} entry={bot} />
       ))}
     </ul>
   );
