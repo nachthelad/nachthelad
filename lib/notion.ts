@@ -3,6 +3,13 @@ import type { Project } from "@/components/projects-data";
 const DATABASE_ID = process.env.NOTION_DATABASE_ID!;
 const NOTION_API_KEY = process.env.NOTION_API_KEY!;
 
+const directoryBotAvatars = new Map([
+  ["/bots/gio-pokesellado-ar", "/bots/gio.svg"],
+  ["/bots/mallmann-parrilla-argentina", "/bots/mallmann.svg"],
+  ["/bots/nitro-grow-journal", "/bots/nitro.svg"],
+  ["/bots/pokerbot-holdem-coach", "/bots/pokerbot.svg"],
+]);
+
 type FileImage =
   | { type: "file"; file: { url: string } }
   | { type: "external"; external: { url: string } };
@@ -29,6 +36,13 @@ function imageUrl(image?: FileImage | null) {
 }
 
 function getAvatar({ icon, properties, cover }: NotionPage): Avatar | null {
+  const link = properties.Link.url;
+  const listing = link && URL.canParse(link) ? new URL(link) : null;
+  if (listing?.origin === "https://grok-bot.directory") {
+    const src = directoryBotAvatars.get(listing.pathname.replace(/\/$/, ""));
+    if (src) return { src };
+  }
+
   if (icon?.type === "emoji") return { emoji: icon.emoji };
   const iconUrl = icon?.type === "custom_emoji" ? icon.custom_emoji.url : imageUrl(icon);
   const src = iconUrl || imageUrl(properties.Image?.files?.[0]) || properties.Image?.url || imageUrl(cover);
