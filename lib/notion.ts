@@ -3,6 +3,31 @@ import type { Project } from "@/components/projects-data";
 const DATABASE_ID = process.env.NOTION_DATABASE_ID!;
 const NOTION_API_KEY = process.env.NOTION_API_KEY!;
 
+const projectLogos = new Map([
+  ["nitro-canna.vercel.app", "/projects/nitro.png"],
+  ["eliantus.com.ar", "/projects/eliantus.svg"],
+  ["equipapp.vercel.app", "/projects/equipapp.png"],
+  ["mk1-moveset.vercel.app", "/projects/mk1.webp"],
+  ["daily-red-es.vercel.app", "/projects/daily-red.png"],
+]);
+
+async function getProjectLogo(link: string | null, hasAvatar: boolean) {
+  if (!link || !URL.canParse(link)) return null;
+  const { hostname, protocol } = new URL(link);
+  if (protocol !== "https:" && protocol !== "http:") return null;
+  const logo = projectLogos.get(hostname.replace(/^www\./, ""));
+  if (logo || hasAvatar) return logo ?? null;
+
+  const favicon = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=64`;
+  try {
+    // Google also sends a decodable globe PNG with its 404 responses.
+    const response = await fetch(favicon, { next: { revalidate: 600 }, signal: AbortSignal.timeout(3000) });
+    return response.ok ? favicon : null;
+  } catch {
+    return null;
+  }
+}
+
 const directoryBotAvatars = new Map([
   ["/bots/gio-pokesellado-ar", "/bots/gio.svg"],
   ["/bots/mallmann-parrilla-argentina", "/bots/mallmann.svg"],
@@ -15,7 +40,7 @@ type FileImage =
   | { type: "external"; external: { url: string } };
 type Avatar = { emoji: string } | { src: string };
 
-export type PortfolioEntry = Project & { id: string; type: string; avatar: Avatar | null };
+export type PortfolioEntry = Project & { id: string; type: string; avatar: Avatar | null; projectLogo: string | null };
 
 type NotionPage = {
   id: string;
@@ -73,15 +98,20 @@ export async function getProjects(): Promise<PortfolioEntry[]> {
 
   const data = await res.json();
 
-  return (data.results as NotionPage[]).map((page) => ({
-    id: page.id,
-    type: page.properties.Type?.select?.name || "Project",
-    avatar: getAvatar(page),
-    name: page.properties.Name.title.map((t) => t.plain_text).join(""),
-    description: page.properties.Description.rich_text
-      .map((t) => t.plain_text)
-      .join(""),
-    technologies: page.properties.Technologies.multi_select.map((t) => t.name),
-    link: page.properties.Link.url ?? "",
+  return Promise.all((data.results as NotionPage[]).map(async (page) => {
+    const type = page.properties.Type?.select?.name || "Project";
+    const avatar = getAvatar(page);
+    return {
+      id: page.id,
+      type,
+      avatar,
+      projectLogo: type === "Project" ? await getProjectLogo(page.properties.Link.url, !!avatar) : null,
+      name: page.properties.Name.title.map((t) => t.plain_text).join(""),
+      description: page.properties.Description.rich_text
+        .map((t) => t.plain_text)
+        .join(""),
+      technologies: page.properties.Technologies.multi_select.map((t) => t.name),
+      link: page.properties.Link.url ?? "",
+    };
   }));
 }
