@@ -4,15 +4,16 @@ import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import type { PortfolioEntry } from "@/lib/notion";
+import { PortfolioListItem } from "./portfolio-list-item";
 import { ProjectsList } from "./projects-list";
 
 function BotAvatar({ bot }: { bot: PortfolioEntry }) {
   const [failedImage, setFailedImage] = useState("");
   const { avatar } = bot;
   return (
-    <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-full border bg-background font-semibold">
+    <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-full font-semibold">
       {avatar && "src" in avatar && avatar.src !== failedImage ? (
-        <Image unoptimized src={avatar.src} width={40} height={40} alt="" className="size-full object-cover" onError={() => setFailedImage(avatar.src)} />
+        <Image unoptimized src={avatar.src} width={40} height={40} alt="" className="bot-avatar-art size-full object-cover" onError={() => setFailedImage(avatar.src)} />
       ) : avatar && "emoji" in avatar ? avatar.emoji : Array.from(bot.name.trim())[0]?.toUpperCase()}
     </span>
   );
@@ -25,18 +26,7 @@ function BotsList({ bots, error }: { bots: PortfolioEntry[]; error: boolean }) {
   return (
     <ul className="divide-y divide-border border-y">
       {bots.map((bot) => (
-        <li key={bot.id} className="flex items-center gap-3 py-4">
-          <BotAvatar bot={bot} />
-          <div className="min-w-0 flex-1">
-            <p className="break-words font-semibold">{bot.name}</p>
-            <p className="truncate text-sm text-muted-foreground" title={bot.description}>{bot.description}</p>
-          </div>
-          {bot.link && (
-            <a href={bot.link} target="_blank" rel="noopener noreferrer" aria-label={`Abrir ${bot.name}`} className="shrink-0 rounded-full border border-border px-4 py-2 text-sm font-medium hover:text-primary focus-visible:outline-2">
-              Abrir
-            </a>
-          )}
-        </li>
+        <PortfolioListItem key={bot.id} entry={bot} avatar={<BotAvatar bot={bot} />} />
       ))}
     </ul>
   );
