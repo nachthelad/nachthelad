@@ -3,10 +3,10 @@ import { CONTACT_INFO } from "@/lib/constants"
 export function Contact() {
   return (
     <>
-      <h2 className="text-3xl sm:text-4xl font-light text-background mb-3 tracking-tight">
+      <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-3 tracking-tight">
         ¿Hablamos?
       </h2>
-      <p className="text-sm text-background/60 mb-8">
+      <p className="text-sm text-muted-foreground mb-8">
         Abierto a oportunidades y proyectos interesantes.
       </p>
 

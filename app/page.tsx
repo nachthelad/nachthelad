@@ -30,7 +30,7 @@ export default async function HomePage() {
   const bots = entries.filter((entry) => entry.type === "Bot");
 
   return (
-    <main id="main-content" className="animate-in fade-in duration-700">
+    <main id="main-content" className="motion-safe:animate-in motion-safe:fade-in motion-safe:duration-700">
 
       {/* ── Sección 1: Hero ── */}
       <section className="px-4 pt-12 pb-8 text-center sm:px-6 sm:pt-16">
@@ -38,7 +38,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Sección 2: Proyectos ── */}
-      <section className="pt-6 pb-20 px-4 sm:px-6 bg-muted">
+      <section className="pt-6 pb-20 px-4 sm:px-6 border-t">
         <div id="portfolio" className="w-full max-w-2xl mx-auto scroll-mt-8">
           <Suspense fallback={<ProjectsList projects={projects} error={notionError} />}>
             <PortfolioDirectory projects={projects} bots={bots} error={notionError} />
@@ -47,7 +47,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Sección 3: Contacto ── */}
-      <footer className="py-20 px-4 sm:px-6 bg-foreground text-center">
+      <footer className="py-20 px-4 sm:px-6 border-t text-center">
         <div className="w-full max-w-2xl mx-auto">
           <Contact />
           <div className="mt-8 flex justify-center">
