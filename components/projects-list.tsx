@@ -1,5 +1,4 @@
-import { ExternalLink } from "lucide-react";
-import Link from "next/link";
+import { PortfolioListItem } from "./portfolio-list-item";
 import type { Project } from "./projects-data";
 
 export function ProjectsList({
@@ -26,27 +25,10 @@ export function ProjectsList({
   }
 
   return (
-    <div className="divide-y divide-border border-t border-b border-border">
+    <ul className="divide-y divide-border border-y">
       {projects.map((project) => (
-        <Link
-          key={project.name}
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Ver proyecto ${project.name}`}
-          className="flex items-center justify-between gap-4 py-4 group text-left"
-        >
-          <div className="min-w-0">
-            <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-              {project.name}
-            </p>
-            <p className="text-sm text-muted-foreground mt-0.5 leading-snug">
-              {project.description}
-            </p>
-          </div>
-          <ExternalLink className="h-4 w-4 text-primary shrink-0 opacity-60 group-hover:opacity-100 transition-opacity" />
-        </Link>
+        <PortfolioListItem key={project.name} entry={project} />
       ))}
-    </div>
+    </ul>
   );
 }

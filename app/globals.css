@@ -63,3 +63,14 @@ html {
 .animate-bounce-down {
   animation: bounce-down 1.8s ease-in-out infinite;
 }
+
+@keyframes bot-avatar-bounce {
+  35% { transform: translateY(-3px) rotate(-8deg); }
+  70% { transform: translateY(-1px) rotate(5deg); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .group:hover .bot-avatar-art {
+    animation: bot-avatar-bounce 420ms ease-in-out;
+  }
+}
