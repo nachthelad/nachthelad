@@ -20,10 +20,6 @@ export const metadata: Metadata = {
     canonical: "https://nachthelad.com.ar",
   },
   manifest: "/manifest.json",
-  icons: {
-    icon: [{ url: "/favicon.ico", sizes: "16x16 32x32", type: "image/x-icon" }],
-    apple: [{ url: "/logo192.png", sizes: "192x192", type: "image/png" }],
-  },
   keywords: [
     "Vibe Coder",
     "React",
@@ -91,7 +87,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ignacio Ventura",
-    jobTitle: "Frontend Developer",
+    jobTitle: "Vibe coder",
     url: "https://nachthelad.com.ar",
     sameAs: [
       "https://github.com/nachthelad",
