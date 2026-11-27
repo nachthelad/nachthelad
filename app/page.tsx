@@ -1,8 +1,7 @@
 import { Header } from "@/components/header";
 import { getProjects } from "@/lib/notion";
 import { Contact } from "@/components/contact";
-import { PortfolioDirectory } from "@/components/portfolio-directory";
-import { ProjectsList } from "@/components/projects-list";
+import { PortfolioDirectory, PortfolioDirectoryFallback } from "@/components/portfolio-directory";
 import { Suspense } from "react";
 
 // Revalidate every 10 minutes — Notion changes appear within 10 minutes, no deploy needed
@@ -32,7 +31,7 @@ export default async function HomePage() {
       {/* ── Sección 2: Proyectos ── */}
       <section className="pt-6 pb-4 px-4 sm:px-6">
         <div id="portfolio" className="w-full max-w-2xl mx-auto scroll-mt-8">
-          <Suspense fallback={<ProjectsList projects={projects} error={notionError} />}>
+          <Suspense fallback={<PortfolioDirectoryFallback projects={projects} error={notionError} />}>
             <PortfolioDirectory projects={projects} bots={bots} error={notionError} />
           </Suspense>
         </div>
